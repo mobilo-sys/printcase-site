@@ -1,197 +1,540 @@
+"use client"
+import { useLanguage } from "@/hooks/use-language"
+import Marquee from "react-fast-marquee"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Navbar from "@/components/Navbar"
+import HeroSection from "@/components/HeroSection"
+import AboutSection from "@/components/AboutSection"
+
+const PhoneIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="#0B388A" strokeWidth="2" fill="none" />
+    <line x1="12" y1="18" x2="12.01" y2="18" stroke="#0B388A" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+)
+
+const UploadIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+      stroke="#0B388A"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <polyline points="7,10 12,15 17,10" stroke="#0B388A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <line x1="12" y1="15" x2="12" y2="3" stroke="#0B388A" strokeWidth="2" />
+  </svg>
+)
+
+const PaymentIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="#0B388A" strokeWidth="2" fill="none" />
+    <line x1="1" y1="10" x2="23" y2="10" stroke="#0B388A" strokeWidth="2" />
+  </svg>
+)
+
+const CheckIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="20,6 9,17 4,12" stroke="#0B388A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+      stroke="#0B388A"
+      strokeWidth="2"
+      fill="none"
+    />
+  </svg>
+)
+
+const LocationIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#0B388A" strokeWidth="2" fill="none" />
+    <circle cx="12" cy="10" r="3" stroke="#0B388A" strokeWidth="2" fill="none" />
+  </svg>
+)
+
+const EmailIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+      stroke="#0B388A"
+      strokeWidth="2"
+      fill="none"
+    />
+    <polyline points="22,6 12,13 2,6" stroke="#0B388A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
+
+const PhoneContactIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+      stroke="#0B388A"
+      strokeWidth="2"
+      fill="none"
+    />
+  </svg>
+)
+
 export default function HomePage() {
+  const { language, setLanguage, t } = useLanguage()
+
+  const caseImages = [
+    { src: "/clear-case-5.png", alt: "Clear case with building design" },
+    { src: "/Phone_Case_4.png", alt: "Phone case with sunset car design" },
+    { src: "/clear-case-4.png", alt: "Clear case with couple photo" },
+    { src: "/clear-case-3.png", alt: "Clear case with bird illustration" },
+    { src: "/Phone_Case_3.png", alt: "Phone case with mother and child" },
+    { src: "/Phone_Case_2.png", alt: "Phone case with orange cat" },
+    { src: "/clear-case.png", alt: "Clear case with sunset silhouette" },
+    { src: "/Phone_Case_1.png", alt: "Phone case with vintage birds" },
+    { src: "/clear-case-2.png", alt: "Clear case with dog in sunglasses" },
+    { src: "/Phone_Case_5.png", alt: "Phone case with cat design" },
+  ]
+
   return (
-    <div
-      className="min-h-screen text-white relative"
-      style={{
-        backgroundColor: "#0B388A",
-        backgroundImage: `url('/pattern.svg')`,
-        backgroundSize: "100% auto",
-        backgroundRepeat: "repeat-y",
-        backgroundPosition: "top left",
-      }}
-    >
-      {/* Fixed Floating Header */}
-      <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-        <div
-          className="p-[1px] rounded-full"
-          style={{
-            background: "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 0.2) 100%)",
-          }}
-        >
-          <header
-            className="flex items-center justify-center"
-            style={{
-              display: "flex",
-              padding: "20px 48px",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "40px",
-              borderRadius: "300px",
-              background: "rgba(11, 56, 138, 0.80)",
-              boxShadow: "0 3px 8px 0 rgba(6, 44, 114, 0.70), 0 2px 4px 0 rgba(255, 255, 255, 0.10) inset",
-              backdropFilter: "blur(12px)",
-              minWidth: "fit-content",
-            }}
+    <div className="min-h-screen text-white relative grid-pattern bg-[#0B388A]">
+      <Navbar />
+
+      <HeroSection />
+
+      <AboutSection />
+
+      <section
+        className="relative px-4 sm:px-6 py-12 sm:py-16 md:py-24 max-w-7xl mx-auto animate-fade-in"
+        id="how-it-works"
+      >
+        <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+          <h2
+            className="text-white text-center font-black uppercase tracking-[-0.64px]
+            text-[32px] leading-[32px]
+            sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px]
+            md:text-[40px] md:leading-[40px] md:tracking-[-0.8px]
+            lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px]
+            xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px]
+            mb-4 sm:mb-6 font-sans"
           >
-            <div className="flex items-center space-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="155" height="40" viewBox="0 0 155 40" fill="none">
-                <g clipPath="url(#clip0_11_996)">
-                  <path
-                    d="M153.09 6.00785C153.141 5.75715 153.086 5.46006 153.056 5.20786C152.995 4.69599 152.927 4.34427 152.509 4.01424C152.538 3.92444 152.545 3.82641 152.559 3.73286C152.229 2.89621 151.515 2.07152 150.781 1.55067C149.287 0.488761 147.482 0.331607 145.711 0.63918C145.178 0.731975 144.601 0.827764 144.09 1.00662C143.27 1.29399 140.735 2.49434 140.259 3.16786C139.728 3.36542 139.303 3.81294 138.878 4.17664L138.86 4.23576L138.45 4.67878C138.035 4.98261 137.732 5.48326 137.466 5.9173C137.264 6.35583 136.912 6.79437 137.096 7.31672C137.135 7.42448 137.15 7.43496 137.211 7.51428C137.457 7.54871 137.569 7.5285 137.775 7.37434C137.984 7.21868 138.447 6.72402 138.487 6.47931C138.501 6.46884 138.515 6.45761 138.529 6.44713C138.925 6.16201 139.083 5.75865 139.435 5.4421C139.606 5.34406 139.747 5.20038 139.893 5.06867C140.224 4.92873 140.425 4.68926 140.635 4.40413C143.154 3.16861 145.859 1.27827 148.804 2.30501C149.758 2.63803 150.762 3.29209 151.189 4.24698C151.235 4.35175 151.245 4.43407 151.236 4.54707C151.339 4.7379 151.437 4.85539 151.43 5.07466C151.888 5.67184 151.837 6.6664 151.749 7.38033C151.739 7.46115 151.727 7.54122 151.714 7.6213C151.928 8.34046 151.376 9.87907 151.004 10.5399C150.993 10.5601 150.977 10.5773 150.963 10.596C150.885 10.8422 150.811 11.0308 150.663 11.2441C150.458 12.4272 147.927 14.5855 146.896 15.3129C146.303 15.7319 145.294 16.5686 144.586 16.6651C144.568 16.6329 144.549 16.6015 144.533 16.5686C144.135 15.7439 145.351 13.5774 144.477 12.743C144.194 12.6876 144.168 12.6876 143.903 12.8006C143.137 13.65 143.339 15.2268 143.059 16.2835C142.882 16.9532 142.27 17.6567 142.342 18.3871C142.364 18.6176 142.479 18.8279 142.663 18.9693C143.368 19.2215 148.075 20.0028 148.598 19.791C148.753 19.8419 148.944 19.8898 149.108 19.8516C149.339 19.7985 149.422 19.6862 149.554 19.5044C149.585 19.2776 149.567 19.1175 149.432 18.9304C149.265 18.6991 148.899 18.6767 148.631 18.6266C148.368 18.3197 146.101 18.4507 145.561 18.0084C145.702 17.7442 147.234 16.8365 147.623 16.5506C149.409 15.2388 150.065 14.5443 151.444 12.8373C151.65 12.5829 151.69 12.4781 151.662 12.1541C151.791 12.0426 151.924 11.9281 152.033 11.7963C152.368 11.3937 152.491 10.8272 152.438 10.3184C152.548 10.2039 152.601 10.0826 152.666 9.94119C152.937 9.35672 153.279 8.42054 153.043 7.78294C153.07 7.73804 153.098 7.69239 153.122 7.64524C153.304 7.29352 153.211 6.37679 153.086 6.0071L153.09 6.00785Z"
-                    fill="#4BB749"
-                  />
-                  <path
-                    d="M22.7068 28.8883C22.6312 28.5882 22.4142 28.2522 22.1343 28.1108C21.8866 27.9851 21.6232 28 21.371 28.1056C20.788 28.3488 20.2739 29.1345 20.0165 29.6943C19.7965 30.043 19.5899 30.4135 19.6999 30.8385C19.7568 31.0571 19.8982 31.2359 20.0936 31.3519C20.7379 31.7373 21.7953 31.6677 22.492 31.4372C22.6178 31.3953 22.7233 31.3377 22.8378 31.2726C22.9306 30.9897 22.8849 30.7585 22.8453 30.4688C22.8602 30.0086 22.8198 29.3351 22.7068 28.8891V28.8883ZM20.5882 30.6125C20.8127 30.2586 21.0298 29.8522 21.3164 29.5476C21.4885 29.3658 21.5267 29.3037 21.7721 29.2924C22.0385 29.6681 22.0131 30.278 22.0572 30.7293C21.5596 30.7345 21.0657 30.7742 20.5882 30.6133V30.6125Z"
-                    fill="#4BB749"
-                  />
-                  <path
-                    d="M9.96071 13.6167C9.78934 12.9881 9.40693 12.3049 9.1465 11.6965L8.81349 11.2063C8.78206 11.0626 8.74464 10.9204 8.70124 10.7805C8.57402 10.3838 7.82043 8.24281 7.63932 8.01532C7.5832 7.94422 7.28311 7.82823 7.18807 7.77809C6.44795 7.57753 5.87696 7.62917 5.18922 7.94422C5.18324 7.94722 5.17575 7.94722 5.16902 7.94871C4.54489 8.16274 3.48972 8.40596 3.14473 9.01661C2.81545 9.59958 3.25623 10.8927 3.46128 11.4877C4.00533 13.0629 4.90335 14.5626 5.37032 16.1529C5.78117 17.1437 6.879 20.0997 7.90873 20.4671C8.55007 20.6961 9.17494 20.2449 9.79083 20.2037C10.1523 20.2179 10.4913 20.2119 10.8295 20.066C11.1738 19.9178 11.4507 19.614 11.5846 19.266C11.9603 18.2947 11.3549 16.9057 10.983 15.9957C10.5571 15.3207 10.5691 14.1376 9.95921 13.6182L9.96071 13.6167ZM10.1418 18.7287C9.99289 18.7317 9.84247 18.719 9.70103 18.7676C9.38747 18.8754 9.05146 18.9607 8.72818 19.0333C7.20827 19.376 7.69021 16.9424 6.85131 16.4245C6.52578 14.4811 4.92805 11.9704 4.41543 9.72305C4.80158 9.51202 5.22889 9.37432 5.64048 9.21941C6.05207 9.16778 6.29454 8.87143 6.75403 8.89014C7.28835 9.66992 7.61987 10.8014 7.92744 11.6987C8.02024 11.9105 8.13399 12.1088 8.24549 12.3109C8.40788 12.7681 8.56878 13.2051 8.78281 13.6414C8.84193 13.7627 8.82621 13.7103 8.84642 13.8188C8.94146 14.3868 9.75716 16.4612 10.0572 17.0195C10.15 17.4633 10.2601 17.8659 10.4217 18.2909C10.3513 18.5573 10.3633 18.5708 10.1426 18.7295L10.1418 18.7287Z"
-                    fill="#4BB749"
-                  />
-                  <path
-                    d="M17.4361 27.0668C17.1218 27.1147 16.8741 27.1649 16.6653 27.4245C16.5112 27.6154 16.4633 27.8848 16.5142 28.1235C16.5725 28.3952 16.7926 28.6653 17.0313 28.803C17.1495 28.8719 17.2895 28.9108 17.4204 28.9474C17.7115 28.931 17.8919 28.9115 18.1441 28.7604C18.2758 28.5418 18.3199 28.4401 18.2488 28.1856C18.1396 27.7927 17.7317 27.3415 17.4369 27.0668H17.4361Z"
-                    fill="#4BB749"
-                  />
-                  <path
-                    d="M20.4446 25.978C20.5628 26.0468 20.7028 26.0858 20.8337 26.1217C21.1248 26.1052 21.3052 26.0858 21.5574 25.9346C21.6891 25.7161 21.7332 25.6143 21.6622 25.3599C21.5529 24.967 21.145 24.5157 20.8502 24.2403C20.5359 24.2882 20.2882 24.3384 20.0794 24.5988C19.9252 24.7896 19.8773 25.059 19.9282 25.2977C19.9866 25.5694 20.2066 25.8396 20.4453 25.9772L20.4446 25.978Z"
-                    fill="#4BB749"
-                  />
-                  <path
-                    d="M28.8231 29.9181C28.4302 29.1772 28.2948 27.8998 27.9071 27.337C27.3893 26.4517 25.9562 21.77 25.6583 21.5088L25.6299 21.3045C25.6187 21.098 25.5483 20.9955 25.4383 20.8234L25.252 20.6318C25.3538 19.9949 24.5141 18.1435 24.2589 17.4468C24.0479 17.0262 23.9267 16.5682 23.7268 16.1387C23.2254 14.3404 22.3708 12.6454 21.8672 10.8463L21.8118 10.7835C21.5387 10.2462 21.2573 9.59211 21.1375 9.0024C20.8726 8.38277 20.1909 6.08383 19.7928 5.80769L19.4373 5.49788C19.4373 5.42379 19.444 5.38338 19.4119 5.30779C19.3318 5.12295 19.1484 4.93287 19.0354 4.7585C18.4083 3.79313 17.9159 2.94974 16.7455 2.54862C15.6731 2.18118 13.9309 2.41392 12.9236 2.91981L12.5667 3.11363C12.1933 3.09642 5.25604 4.66945 5.03452 4.82586C5.01432 4.84007 4.99786 4.85953 4.9799 4.87674C4.41714 5.01968 3.27515 5.0803 2.81716 5.3527C1.74253 5.67598 1.00316 6.16765 0.465841 7.18466C-0.135085 8.32215 -0.0550118 9.33767 0.155275 10.5687C0.0534991 10.9728 0.22113 11.3395 0.334879 11.7264C0.65667 12.5069 0.707558 13.3062 1.12289 14.0695C1.25909 14.6083 1.46264 15.1756 1.75749 15.6485C1.96105 16.8556 2.72811 18.0223 3.14494 19.1725C3.45999 20.0915 3.81621 21.0179 4.20236 21.91C4.36475 22.4847 4.54959 23.1335 4.80179 23.6716C5.10038 24.6175 5.57783 25.5776 5.73723 26.5535C5.77839 26.7533 5.77614 26.7705 5.92506 26.906C6.21542 28.806 7.17556 30.9089 7.71512 32.7872C7.7226 32.8157 7.71437 32.8441 7.71362 32.8726C8.1761 34.2637 9.7873 39.006 10.9675 39.6122C11.5616 39.919 12.4559 40.0537 13.1085 39.9804C13.342 39.9542 13.4872 39.9886 13.6795 39.8449C15.2054 39.7005 16.9303 39.048 18.3799 38.5428L18.5325 38.4373C19.6902 38.3774 20.8532 37.781 21.975 37.4794C23.5929 37.0431 25.5079 36.9413 27.0039 36.1795C27.9341 35.7058 28.4953 34.8579 28.7992 33.8858C29.1314 32.8217 29.3507 30.9156 28.8216 29.9166L28.8231 29.9181ZM27.2658 33.5401C27.0637 34.1201 26.7876 34.4853 26.2331 34.7584C25.7399 35.0016 20.6062 36.3195 20.0113 36.3838C20.4057 35.857 21.1772 35.1071 21.1301 34.4261L20.9512 34.2997C20.4588 34.3887 20.2276 34.7577 19.9552 35.149C19.6603 35.5726 19.1477 36.6996 18.7398 36.9039C18.5527 36.9114 18.4397 36.9069 18.2833 37.0162C17.7565 36.7617 17.2753 36.4512 16.7836 36.1354C17.5776 35.8083 18.231 35.1446 18.9366 34.6679C19.2322 34.468 19.5698 34.361 19.8586 34.1425C19.9948 34.0385 20.0524 33.9345 20.1273 33.7855L20.0472 33.6426C19.0504 33.5977 17.5283 35.2493 16.5801 35.6736C16.5389 35.6923 16.497 35.7088 16.4559 35.726C15.7 35.152 15.1897 34.1238 14.9083 33.2303C14.6501 32.6308 14.4727 31.7657 14.4114 31.1192C14.4623 30.1471 14.2557 29.1675 14.3133 28.1826L14.3216 28.1153C14.371 27.5712 14.3837 27.1222 14.136 26.6208C14.1345 26.5916 14.1352 26.5632 14.1307 26.5363C14.0574 25.9967 13.446 25.3292 13.0299 24.9827C13.3218 24.8974 13.5298 24.8734 13.8344 24.8944C14.1188 25.0343 14.3807 25.0268 14.6898 25.0224C15.2465 25.0134 16.0652 25.0276 16.4641 24.6108C17.1578 24.2688 19.0003 23.5848 19.3101 22.8641L19.3542 22.5303C19.6536 21.3831 18.909 20.304 18.9815 19.1837L19.1844 19.1785C19.9282 19.6986 21.1271 20.7425 22.046 20.7104C22.2923 20.5502 22.4285 20.4424 22.5751 20.1865C22.4397 19.2481 20.2642 18.362 19.5249 17.7918C18.9928 17.6728 18.5363 17.5321 18.0296 17.8232C17.7902 17.9609 17.6704 18.1517 17.6255 18.4189C17.4826 19.2765 18.448 21.5717 17.9892 22.0656C17.9623 22.0948 17.8396 22.1622 17.8111 22.1794C17.3052 22.4795 16.2957 23.489 16.0345 23.5743C15.6379 23.4276 13.7917 23.3393 13.3974 23.4396C13.3495 23.4493 13.3023 23.4605 13.2544 23.4688C13.0763 23.501 12.9199 23.4867 12.741 23.4725C12.438 23.4486 12.2337 23.4546 11.9807 23.6484C11.8707 23.7329 11.8767 23.7487 11.7966 23.8714C11.5976 24.0241 11.3978 24.1221 11.3985 24.4095C11.3985 24.6587 11.5033 24.952 11.5444 25.2035C11.9949 25.6532 12.6527 26.5325 13.2394 26.7391C13.0598 27.2794 13.0703 27.7224 12.988 28.2709C12.9334 28.5172 12.857 28.7626 12.8892 29.0171C12.8077 29.6262 12.8765 30.2668 12.9259 30.8775C12.8159 31.5585 13.1751 32.6675 13.309 33.3567L13.3764 33.4241L13.5732 34.0123C13.8688 34.8961 14.4997 35.9408 15.1208 36.6375C14.5812 37.0551 13.9766 37.4585 13.5163 37.9628L13.5859 38.0579C14.5513 37.9441 15.1021 36.6704 16.0113 37.3881C16.0914 37.451 16.1535 37.5333 16.2171 37.6126C16.0877 37.6702 16.0271 37.683 15.8879 37.6942C15.7187 37.7077 15.6731 37.7488 15.5331 37.8281C14.713 38.2921 13.4512 38.4216 12.521 38.5061C12.3459 38.4874 12.1633 38.4665 12.0009 38.3931C10.7736 37.8416 9.44007 33.7152 9.00378 32.3809C8.82268 32.2088 7.2923 27.0908 7.16583 26.5056C6.81635 25.4055 6.41673 24.3212 6.06126 23.2218L6.06949 23.1837C5.84948 22.71 5.8173 22.2347 5.5247 21.7745C5.29196 20.9551 4.94547 20.1753 4.67008 19.3701C3.90227 17.5733 3.26542 15.7099 2.44598 13.9348C2.40108 13.5367 2.1414 13.0877 1.98275 12.718L2.01044 12.5301C1.82859 12.2697 1.70361 12.0991 1.71259 11.7735C1.71933 11.5273 1.75001 11.2834 1.59061 11.0918C1.50829 10.8845 1.47387 10.6832 1.4372 10.4647C1.3908 10.0389 1.34665 9.60408 1.33991 9.17602C1.32944 8.5287 1.52551 7.73919 2.00146 7.27745C2.32699 6.96165 3.01473 6.6885 3.46823 6.68102C4.09534 6.51563 4.72995 6.35698 5.36829 6.24473C7.29305 5.61088 9.44905 5.23595 11.4292 4.78545C12.3063 4.58564 13.2305 4.43597 14.0619 4.08424C14.234 4.12241 14.3986 4.06254 14.5685 4.02587C14.6082 4.02138 14.6486 4.01839 14.6883 4.01165C14.8357 3.9877 14.9023 3.95927 15.0325 3.90613C15.3505 3.77667 15.8228 3.73775 16.1483 3.86497C16.7492 4.09996 17.2805 4.72333 17.645 5.23221C17.6876 5.29208 17.734 5.3497 17.7782 5.40807L17.8815 5.4208C18.0768 5.71265 18.3305 6.02322 18.4562 6.351C18.781 7.11357 19.0474 7.91804 19.3894 8.66714C19.4418 9.02186 19.5877 9.27181 19.6828 9.60109L19.7262 9.65197C19.9544 10.226 20.0936 10.9257 20.4236 11.4375L20.5014 11.6179C20.5995 12.2824 23.4095 19.8647 23.7396 20.2943C23.8151 20.4806 23.8406 20.658 23.8997 20.8451C23.9079 20.872 23.9252 20.8952 23.9379 20.9206L24.1093 21.538C24.4236 21.9579 24.5628 22.7272 24.7536 23.233C24.8808 23.5893 25.002 23.9372 25.1757 24.274C24.666 25.1511 23.7388 28.9579 23.9678 29.9091C23.9903 30.0019 24.0007 30.0191 24.0374 30.1156L24.1661 30.1748C25.0634 29.2206 25.0387 26.5991 25.5034 25.3247C25.9233 26.2579 26.2578 27.1926 26.706 28.1175C26.3348 28.6144 25.4997 29.5731 25.6411 30.2384C25.6486 30.2735 25.6658 30.305 25.6785 30.3386C25.8888 30.3618 25.8103 30.3903 25.9816 30.2608C26.3595 29.9772 26.6806 29.3531 26.8422 28.922C27.5374 30.3401 27.8001 32.0164 27.2688 33.5423L27.2658 33.5401Z"
-                    fill="#4BB749"
-                  />
-                  <path
-                    d="M38.9966 11.3414C40.2463 11.3414 41.6076 11.4214 42.6815 12.4631C43.1941 12.9758 43.7232 13.8251 43.7232 15.1864C43.7232 16.4519 43.2906 17.3656 42.778 17.9418C41.7849 19.0793 40.4229 19.1594 38.6127 19.1594H35.9695V22.5554H32.4126V11.3406H38.9973L38.9966 11.3414ZM35.9688 16.6599H38.228C38.6928 16.6599 39.3333 16.612 39.718 16.2595C39.9425 16.0515 40.1184 15.699 40.1184 15.2178C40.1184 14.6895 39.8781 14.4006 39.6379 14.2405C39.4456 14.1125 39.0931 13.9681 38.3403 13.9681H35.9695V16.6599H35.9688Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M45.3091 11.3414H52.5823C53.5275 11.3414 54.6807 11.3735 55.6101 12.0785C56.571 12.7992 56.7319 13.8087 56.7319 14.5615C56.7319 15.2508 56.5718 15.955 56.027 16.5162C55.6902 16.853 55.1619 17.1733 54.6014 17.317V17.3813C55.1619 17.4614 55.6431 17.7338 55.9312 18.0705C56.4438 18.6475 56.4595 19.336 56.4917 19.8329L56.5561 20.9225C56.5882 21.5796 56.6518 21.9956 57.0208 22.5569H53.3359C52.9677 22.06 52.9191 21.7075 52.8876 21.147L52.8397 20.3463C52.8076 19.9294 52.8076 19.321 52.3428 18.9364C51.9103 18.5839 51.1253 18.5682 50.885 18.5682H48.8667V22.5577H45.3098V11.3429L45.3091 11.3414ZM48.8652 16.2917H51.4927C51.9253 16.2917 52.4701 16.2116 52.7425 16.0193C52.9183 15.8913 53.2072 15.5868 53.2072 14.9941C53.2072 14.5937 53.0792 14.2248 52.6788 14.001C52.3264 13.793 51.8781 13.8087 51.4613 13.8087H48.866V16.2917H48.8652Z"
-                    fill="white"
-                  />
-                  <path d="M62.4505 11.3414V22.5562H58.8936V11.3414H62.4505Z" fill="white" />
-                  <path
-                    d="M68.4104 22.5554H64.8535V11.3406H68.266L73.2328 18.1012V11.3406H76.7897V22.5554H73.3937L68.4112 15.7948V22.5554H68.4104Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M78.0711 13.9688V11.3414H89.1414V13.9688H85.3922V22.5562H81.8353V13.9688H78.0703H78.0711Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M102.359 18.5188C102.311 20.6658 101.029 21.7068 100.501 22.0435C99.3789 22.7807 97.8253 22.8929 96.2231 22.8929C94.5408 22.8929 92.7305 22.7649 91.2405 21.3072C89.9429 20.0252 89.6548 18.3916 89.6548 17.0139C89.6548 15.6362 89.9751 14.0018 91.257 12.7206C92.7627 11.2149 94.7017 11.0383 96.2238 11.0383C98.3865 11.0383 99.6685 11.4551 100.486 11.9835C102.056 12.993 102.28 14.4186 102.296 15.268H98.6754C98.611 14.563 98.195 14.1784 97.9547 14.0182C97.7145 13.8581 97.2498 13.6657 96.3203 13.6657C95.6798 13.6657 94.9269 13.7623 94.2856 14.4351C93.8852 14.8676 93.4684 15.6683 93.4684 17.0303C93.4684 18.2958 93.853 19.0651 94.3178 19.5298C94.9583 20.1704 95.7434 20.267 96.4161 20.267C96.9288 20.267 97.5693 20.2348 98.082 19.8344C98.3701 19.6099 98.7226 19.1774 98.7712 18.521H102.36L102.359 18.5188Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M106.124 22.5554H102.487L107.485 11.3406H110.865L115.848 22.5554H112.211L111.426 20.6172H106.924L106.123 22.5554H106.124ZM110.626 18.4223L109.168 14.7217L107.742 18.4223H110.627H110.626Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M119.613 18.887V18.9514C119.613 19.2881 119.678 19.7521 120.094 20.0888C120.542 20.4413 121.231 20.4892 121.776 20.4892C122.289 20.4892 122.786 20.4735 123.202 20.2647C123.794 19.9766 123.842 19.4954 123.842 19.3038C123.842 18.7755 123.49 18.5345 123.105 18.3908C122.673 18.2142 122.256 18.1663 121.663 18.0705L120.029 17.7981C118.667 17.5736 117.561 17.3978 116.809 16.6449C116.264 16.0844 116.104 15.4431 116.104 14.7868C116.104 13.2811 116.793 12.3674 117.721 11.8226C118.186 11.5502 119.292 11.0375 121.599 11.0375C123.761 11.0375 124.867 11.4544 125.459 11.8068C126.853 12.624 127.045 13.7451 127.014 14.5944H123.553C123.569 14.3063 123.506 13.8738 122.976 13.6014C122.784 13.5056 122.416 13.3769 121.534 13.3769C121.102 13.3769 120.589 13.4091 120.189 13.6171C119.741 13.8573 119.644 14.1941 119.644 14.45C119.644 15.0105 120.124 15.1707 120.413 15.2508C120.702 15.3308 121.086 15.4109 122.128 15.571L123.521 15.7791C125.043 16.0036 125.908 16.3239 126.469 16.7564C127.398 17.4614 127.591 18.4223 127.591 19.1916C127.591 20.6336 126.886 21.4987 126.261 21.9635C125.139 22.7964 123.506 22.8929 121.903 22.8929C120.398 22.8929 118.491 22.845 117.225 21.7554C116.232 20.906 116.056 19.8973 116.056 18.9521V18.8877H119.613L119.613 18.887Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M138.758 15.6668V18.102H132.91V19.928H140.183V22.5554H129.353V11.3406H140.007V13.9681H132.909V15.6661H138.757L138.758 15.6668Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M83.4143 28.5213L83.094 30.0591H76.4135L75.6764 33.4873H83.4465L83.1262 35.0252H73.4014L75.7886 23.8104H85.3046L84.9679 25.3483H77.4058L76.733 28.5205H83.4136L83.4143 28.5213Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M94.8207 23.8111H97.16L91.5848 29.2419L94.8529 35.0252H92.2733L89.9826 30.5874L85.7529 35.0252H83.2534L89.0367 29.2419L85.8165 23.8111H88.2838L90.6389 28.073L94.8207 23.8111Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M103.744 23.8111C104.642 23.8111 106.067 23.8269 106.917 24.7241C107.349 25.1724 107.654 25.9417 107.654 26.9348C107.654 28.3925 107.013 29.2898 106.34 29.8189C105.187 30.7162 103.568 30.7798 102.383 30.7798H98.7782L97.8809 35.0252H95.894L98.2813 23.8104H103.744V23.8111ZM99.1142 29.2427H102.494C103.152 29.2427 103.824 29.2105 104.433 28.9059C105.233 28.5055 105.538 27.8485 105.538 27.0635C105.538 26.3264 105.25 25.9417 105.025 25.7658C104.561 25.3812 103.792 25.349 103.007 25.349H99.9314L99.1142 29.2419V29.2427Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M110.233 23.8111H116.289C117.282 23.8111 118.307 23.8269 119.06 24.3395C119.59 24.692 120.118 25.3647 120.118 26.5823C120.118 27.5432 119.813 28.3125 118.965 28.9052C118.484 29.2419 117.811 29.4821 117.202 29.5944L117.187 29.6588C117.779 29.7231 118.212 30.0112 118.436 30.2993C118.677 30.6039 118.773 30.9564 118.773 31.3889C118.773 31.5648 118.741 31.8372 118.725 32.0295L118.597 33.087C118.565 33.3751 118.533 33.7597 118.533 33.9999C118.533 34.4168 118.597 34.7371 118.709 35.0252H116.547C116.467 34.7528 116.402 34.3681 116.402 34.0636C116.402 33.9513 116.402 33.7111 116.467 33.2464L116.579 32.4134C116.611 32.1253 116.659 31.9487 116.659 31.7085C116.659 31.2759 116.515 30.9392 116.307 30.7476C116.034 30.5074 115.489 30.4273 115.089 30.4273H110.811L109.834 35.0252H107.847L110.234 23.8104L110.233 23.8111ZM111.129 28.8902H114.878C115.567 28.8902 116.56 28.778 117.105 28.4412C117.553 28.1688 118.002 27.624 118.002 26.839C118.002 26.1984 117.714 25.8616 117.57 25.7337C117.169 25.3655 116.625 25.349 116.24 25.349H111.882L111.129 28.8895V28.8902Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M130.547 28.5213L130.227 30.0591H123.546L122.809 33.4873H130.579L130.259 35.0252H120.534L122.921 23.8104H132.437L132.101 25.3483H124.539L123.866 28.5205H130.546L130.547 28.5213Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M133.975 31.4855C133.927 31.9981 133.959 32.5908 134.327 33.0233C134.888 33.6961 136.17 33.8083 137.051 33.8083C137.691 33.8083 138.508 33.7126 139.085 33.5038C139.582 33.3272 140.415 32.9111 140.415 31.8058C140.415 31.3732 140.255 31.0207 139.838 30.7326C139.63 30.5882 139.23 30.3959 138.108 30.1878L136.106 29.8196C135.256 29.6595 134.087 29.4514 133.462 28.6021C133.238 28.2975 133.03 27.8492 133.03 27.2244C133.03 26.5351 133.19 24.885 135.128 24.0521C136.073 23.6517 137.611 23.4916 138.685 23.4916C140.64 23.4916 141.585 23.9885 142.05 24.341C142.707 24.8379 143.235 25.6386 143.171 26.8404H141.153C141.153 26.4236 141.041 25.8631 140.368 25.447C139.791 25.0945 139.071 25.0467 138.398 25.0467C137.725 25.0467 136.972 25.0945 136.251 25.4148C135.353 25.7995 135.113 26.3922 135.113 26.9527C135.113 27.4017 135.353 27.6898 135.658 27.8657C135.946 28.0416 136.299 28.1059 137.212 28.2825L139.327 28.6829C140.192 28.843 141.137 29.0354 141.795 29.676C142.083 29.9641 142.532 30.541 142.532 31.4862C142.532 32.5115 142.099 33.9857 140.305 34.7707C140.215 35.1711 140.077 35.3477 138.603 35.3477C136.857 35.3477 135.751 35.1075 135.046 34.627C144.293 34.1144 143.572 33.057 143.781 31.487H145.799L145.798 31.4855Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_11_996">
-                    <rect width="155" height="40" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="navbar-text hover:text-[#aae0f5] transition-colors">
-                О НАС
-              </a>
-              <a href="#" className="navbar-text hover:text-[#aae0f5] transition-colors">
-                КАК ЭТО РАБОТАЕТ
-              </a>
-              <a href="#" className="navbar-text hover:text-[#aae0f5] transition-colors">
-                ГАЛЕРЕЯ ДИЗАЙНОВ
-              </a>
-              <a href="#" className="navbar-text hover:text-[#aae0f5] transition-colors">
-                КОНТАКТЫ
-              </a>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <span className="navbar-text">LV</span>
-                <span className="navbar-text bg-[#ffffff] text-[#0b388a] px-2 py-1 rounded">RU</span>
-                <span className="navbar-text">EN</span>
-              </div>
-              <button className="navbar-text bg-[#ffffff] text-[#0b388a] px-6 py-2 rounded-full hover:bg-[#dee3f3] transition-colors">
-                НАЙТИ АППАРАТ
-              </button>
-            </div>
-          </header>
+            {t("howItWorksTitle")}
+          </h2>
+          <p className="text-white/80 text-base sm:text-lg md:text-xl">{t("howItWorksSubtitle")}</p>
         </div>
-      </div>
 
-      {/* Hero Section */}
-      <main className="relative px-6 py-16 pt-32 max-w-7xl mx-auto">
-        <div className="text-center relative z-10">
-          <div className="relative mb-16">
-            <img
-              src="/hero.png"
-              alt="PrintCase Express Hero"
-              className="mx-auto"
-              style={{
-                position: "relative",
-                top: "190px",
-                width: "1118px",
-                maxWidth: "100%",
-                height: "auto",
-              }}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Step 1 - Choose Model */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 hover-scale">
+              <PhoneIcon />
+            </div>
+            <h3 className="text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4 whitespace-pre-line">
+              {t("step1Title")}
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">{t("step1Description")}</p>
           </div>
 
-          <div className="mt-48 mb-8">
-            <h1 className="hero-h1 mb-4">
-              ТВОЙ СТИЛЬ
-              <br />
-              ЗА 3 МИНУТЫ!
-            </h1>
-            <p className="hero-h2 max-w-2xl mx-auto">
-              Персонализированные чехлы для телефона прямо сейчас - выбери дизайн, получи результат!
+          {/* Step 2 - Upload Photo */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-100 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 hover-scale">
+              <UploadIcon />
+            </div>
+            <h3 className="text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4 whitespace-pre-line">
+              {t("step2Title")}
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">{t("step2Description")}</p>
+          </div>
+
+          {/* Step 3 - Payment */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-200 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 hover-scale">
+              <PaymentIcon />
+            </div>
+            <h3 className="text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4 whitespace-pre-line">
+              {t("step3Title")}
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">{t("step3Description")}</p>
+          </div>
+
+          {/* Step 4 - Get Case */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-300 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 hover-scale">
+              <CheckIcon />
+            </div>
+            <h3 className="text-white font-bold text-lg sm:text-xl mb-3 sm:mb-4 whitespace-pre-line">
+              {t("step4Title")}
+            </h3>
+            <p className="text-white/70 text-sm leading-relaxed">{t("step4Description")}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative py-12 sm:py-16 md:py-24 max-w-7xl mx-auto animate-fade-in" id="locations">
+        <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+          <h2
+            className="text-white text-center font-black uppercase tracking-[-0.64px]
+            text-[32px] leading-[32px]
+            sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px]
+            md:text-[40px] md:leading-[40px] md:tracking-[-0.8px]
+            lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px]
+            xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px]
+            mb-4 sm:mb-6 font-sans"
+          >
+            {t("locationsTitle")}
+          </h2>
+          <p className="text-white/80 text-base sm:text-lg md:text-xl">{t("locationsSubtitle")}</p>
+        </div>
+
+        {/* Store Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          {/* Origo */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center mb-3 sm:mb-4 hover-scale">
+              <LocationIcon />
+            </div>
+            <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">ORIGO</h3>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">Привокзальная площадь 2, Рига</p>
+            <button
+              onClick={() => window.open("https://maps.google.com/?q=Origo+Riga", "_blank")}
+              className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
+            >
+              {t("getDirections")}
+              <svg width="14" height="14" className="sm:w-4 sm:h-4 ml-2" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Galerija Centrs */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-100 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center mb-3 sm:mb-4 hover-scale">
+              <LocationIcon />
+            </div>
+            <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">GALERIJA CENTRS</h3>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">ул. Аудею 16, Рига</p>
+            <button
+              onClick={() => window.open("https://maps.google.com/?q=Galerija+Centrs+Riga", "_blank")}
+              className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
+            >
+              {t("getDirections")}
+              <svg width="14" height="14" className="sm:w-4 sm:h-4 ml-2" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Domina Shopping */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-200 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-10 h-10 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 sm:mb-4 hover-scale">
+              <LocationIcon />
+            </div>
+            <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">DOMINA SHOPPING</h3>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">Иерикю 3, Рига</p>
+            <button
+              onClick={() => window.open("https://maps.google.com/?q=Domina+Shopping+Riga", "_blank")}
+              className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
+            >
+              {t("getDirections")}
+              <svg width="14" height="14" className="sm:w-4 sm:h-4 ml-2" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Akropole Alfa */}
+          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-300 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div className="w-10 h-10 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 sm:mb-4 hover-scale">
+              <LocationIcon />
+            </div>
+            <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">AKROPOLE ALFA</h3>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">Брианстас 6А, Рига</p>
+            <button
+              onClick={() => window.open("https://maps.google.com/?q=Akropole+Alfa+Riga", "_blank")}
+              className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
+            >
+              {t("getDirections")}
+              <svg width="14" height="14" className="sm:w-4 sm:h-4 ml-2" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M12 5l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Google Maps Integration */}
+        <div className="w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden animate-fade-in animate-delay-400">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.5!2d24.1!3d56.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eecfb0e5073ded%3A0x400cfcd68f2fe30!2sRiga%2C%20Latvia!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+            width="100%"
+            height="100%"
+            className="border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="PrintCase Express Locations in Riga"
+          />
+        </div>
+      </section>
+
+      <section className="relative sm:py-32 md:py-24 w-full overflow-hidden animate-fade-in" id="gallery">
+        <div
+          className="absolute inset-0 w-full h-full z-0"
+          style={{
+            backgroundImage: "url(/Vector.svg)",
+            backgroundSize: "100% auto",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center 100%",
+          }}
+        />
+
+        <div className="relative z-10">
+          <div className="text-center mb-12 sm:mb-16 px-4 sm:px-6 animate-slide-up">
+            <h2
+              className="text-white text-center font-black uppercase tracking-[-0.64px]
+              text-[32px] leading-[32px]
+              sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px]
+              md:text-[40px] md:leading-[40px] md:tracking-[-0.8px]
+              lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px]
+              xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px]
+              mb-4 sm:mb-6 font-sans"
+            >
+              {t("galleryTitle")}
+            </h2>
+            <p className="text-white/80 text-center font-normal text-base sm:text-lg md:text-xl leading-relaxed">
+              {t("gallerySubtitle")}
             </p>
           </div>
 
-          <button className="hero-button hover:bg-[#dee3f3] transition-colors">
-            <span className="hero-button-text">НАЙТИ АППАРАТ</span>
-          </button>
+          <div className="w-full marquee-container">
+            <Marquee
+              speed={50}
+              pauseOnHover={false}
+              gradient={false}
+              direction="left"
+              className="overflow-hidden marquee-content"
+              onMouseEnter={(e) => {
+                const marquee = e.currentTarget.querySelector('[data-testid="marquee"]') as HTMLElement
+                if (marquee) {
+                  marquee.style.animationDuration = "120s" // Slower animation
+                }
+              }}
+              onMouseLeave={(e) => {
+                const marquee = e.currentTarget.querySelector('[data-testid="marquee"]') as HTMLElement
+                if (marquee) {
+                  marquee.style.animationDuration = "48s" // Normal animation speed
+                }
+              }}
+            >
+              {caseImages.map((image, index) => (
+                <div key={index} className="flex-none mx-3 sm:mx-6">
+                  <div className="flex items-center justify-center">
+                    <img
+                      src={image.src || "/placeholder.svg"}
+                      alt={image.alt}
+                      className="h-64 sm:h-80 md:h-96 lg:h-[500px] w-auto object-contain img-hover transition-transform duration-300 cursor-pointer min-w-0"
+                    />
+                  </div>
+                </div>
+              ))}
+            </Marquee>
+          </div>
         </div>
-      </main>
+      </section>
 
-      {/* Bottom Section */}
-      <div className="h-32 bg-black relative z-10"></div>
+      <section className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in bg-[#E781AF]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+            <h2
+              className="text-white text-center font-black uppercase tracking-[-0.64px]
+              text-[32px] leading-[32px]
+              sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px]
+              md:text-[40px] md:leading-[40px] md:tracking-[-0.8px]
+              lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px]
+              xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px]
+              mb-4 sm:mb-6 font-sans"
+            >
+              {t("faqTitle")}
+            </h2>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4 sm:space-y-6">
+            <AccordionItem value="item-1" className="border-none">
+              <div className="card-hover animate-scale-in p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">
+                  {t("faq1Question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">
+                  {t("faq1Answer")}
+                </AccordionContent>
+              </div>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border-none">
+              <div className="card-hover animate-scale-in animate-delay-100 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">
+                  {t("faq2Question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">
+                  {t("faq2Answer")}
+                </AccordionContent>
+              </div>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border-none">
+              <div className="card-hover animate-scale-in animate-delay-200 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">
+                  {t("faq3Question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">
+                  {t("faq3Answer")}
+                </AccordionContent>
+              </div>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in grid-pattern bg-[#0B388A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-center items-center relative">
+          <div className="relative z-10 w-full max-w-4xl card-hover animate-scale-in p-8 px-6 rounded-3xl bg-gradient-to-br from-[#0B388A] to-[#1e4a8c] shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+            <div className="w-full text-center mb-8 sm:mb-12">
+              <h2
+                className="text-white text-center font-black uppercase tracking-[-0.64px]
+                text-[32px] leading-[32px]
+                sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px]
+                md:text-[40px] md:leading-[40px] md:tracking-[-0.8px]
+                lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px]
+                xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px]
+                mb-4 sm:mb-6 font-sans"
+              >
+                {t("newsletterTitle")}
+              </h2>
+              <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed">{t("newsletterSubtitle")}</p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-2xl mx-auto">
+              <input
+                type="email"
+                placeholder={t("emailPlaceholder")}
+                className="flex-1 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white/20 border-none outline-none text-white text-base sm:text-lg hover-scale transition-all font-sans placeholder:text-white/70"
+              />
+              <button className="btn-hover px-6 sm:px-10 py-3 sm:py-4 rounded-full bg-white text-[#0B388A] font-bold text-base sm:text-lg hover:bg-gray-100 transition-colors whitespace-nowrap font-sans">
+                {t("subscribe")}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in grid-pattern bg-[#0B388A] rounded-b-[80px]"
+        id="contacts"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+            <h2
+              className="text-white text-center font-black uppercase tracking-[-0.64px]
+              text-[32px] leading-[32px]
+              sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px]
+              md:text-[40px] md:leading-[40px] md:tracking-[-0.8px]
+              lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px]
+              xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px]
+              mb-4 sm:mb-6 font-sans"
+            >
+              {t("contactTitle")}
+            </h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-4xl mx-auto">
+            {/* Email Card */}
+            <div className="card-hover flex-1 flex flex-col items-center text-center p-8 sm:p-12 animate-scale-in rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center mb-6 sm:mb-8 hover-scale">
+                <EmailIcon />
+              </div>
+              <h3 className="text-white font-bold text-xl sm:text-2xl mb-4 sm:mb-6">{t("email")}</h3>
+              <a
+                href="mailto:info@printcase.lv"
+                className="text-white/80 text-lg sm:text-xl hover:text-white transition-colors btn-hover"
+              >
+                info@printcase.lv
+              </a>
+            </div>
+
+            {/* Phone Card */}
+            <div className="card-hover flex-1 flex flex-col items-center text-center p-8 sm:p-12 animate-scale-in animate-delay-200 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center mb-6 sm:mb-8 hover-scale">
+                <PhoneContactIcon />
+              </div>
+              <h3 className="text-white font-bold text-xl sm:text-2xl mb-4 sm:mb-6">{t("phone")}</h3>
+              <a
+                href="tel:+37122816000"
+                className="text-white/80 text-lg sm:text-xl hover:text-white transition-colors btn-hover"
+              >
+                +371 22816000
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black py-8 sm:py-12 md:py-16 animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8">
+            {/* Logo */}
+            <div className="order-1 md:order-none hover-scale">
+              <img src="/Logo-white.png" alt="PrintCase Express" className="h-8 sm:h-10" />
+            </div>
+
+            {/* Social Media */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 order-2 md:order-none">
+              <span className="text-white/70 text-sm">{t("followUs")}</span>
+              <div className="flex items-center space-x-4">
+                <a href="#" className="text-white/70 hover:text-white transition-colors hover-scale">
+                  <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                  </svg>
+                </a>
+                <a href="#" className="text-white/70 hover:text-white transition-colors hover-scale">
+                  <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.059-1.69-.073-4.85-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+                <a href="#" className="text-white/70 hover:text-white transition-colors hover-scale">
+                  <svg width="20" height="20" className="sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 text-center">
+            <p className="text-white/50 text-xs sm:text-sm">{t("copyright")}</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

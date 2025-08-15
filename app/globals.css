@@ -114,6 +114,15 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Updated grid pattern opacity to 15% */
+.grid-pattern {
+  background-image: linear-gradient(to right, rgba(135, 163, 212, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(135, 163, 212, 0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: 0 0, 0 0;
+  background-repeat: repeat;
+}
+
 /* Custom Pragmatica font fallback */
 .font-pragmatica {
   font-family: "Pragmatica", "Inter", system-ui, sans-serif;
@@ -177,8 +186,19 @@
   text-transform: uppercase;
 }
 
+/* Added FAQ question styling with exact specifications */
+.faq-question {
+  color: var(--Text-default, #fff);
+  font-family: "Pragmatica", "Inter", system-ui, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 28px;
+  text-align: left;
+}
+
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .hero-h1 {
     font-size: 48px;
     line-height: 44px;
@@ -186,13 +206,205 @@
   }
 
   .hero-h2 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   .hero-button-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .navbar-text {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
+  }
+
+  .faq-question {
     font-size: 16px;
     line-height: 24px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .hero-h1 {
+    font-size: 64px;
+    line-height: 60px;
+    letter-spacing: -1.28px;
+  }
+
+  .hero-h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-h1 {
+    font-size: 96px;
+    line-height: 88px;
+    letter-spacing: -1.92px;
+  }
+
+  .hero-h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .hero-button-text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+/* Adding smooth animations and hover effects */
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* Hover effects with scale 1.03 */
+.hover-scale {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  transform: scale(1.03);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.03);
+}
+
+/* Navigation hover effects */
+.nav-hover {
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-hover:hover {
+  transform: scale(1.03);
+}
+
+/* Image hover effects */
+.img-hover {
+  transition: transform 0.4s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.03);
+}
+
+/* Marquee hover slow effect */
+.marquee-container:hover .marquee-content {
+  animation-duration: 120s !important;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+[role="button"] {
+  transition: all 0.3s ease;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger animation delays */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hover-scale:hover,
+  .btn-hover:hover,
+  .card-hover:hover,
+  .nav-hover:hover,
+  .img-hover:hover {
+    transform: none;
   }
 }
 
