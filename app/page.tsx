@@ -256,29 +256,29 @@ export default function HomePage() {
             </button>
           </div>
 
-          {/* Akropole Alfa */}
-          <div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-300 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
-            <div className="w-10 h-10 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 sm:mb-4 hover-scale">
-              <LocationIcon />
-            </div>
-            <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">AKROPOLE ALFA</h3>
-            <p className="text-white/70 text-sm mb-3 sm:mb-4">Брианстас 6А, Рига</p>
-            <button
-              onClick={() => window.open("https://maps.google.com/?q=Akropole+Alfa+Riga", "_blank")}
-              className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
-            >
-              {t("getDirections")}
-              <svg width="14" height="14" className="sm:w-4 sm:h-4 ml-2" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M5 12h14M12 5l7 7-7 7"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
+         {/* Ditton */}
+<div className="card-hover flex flex-col items-center text-center p-6 sm:p-8 animate-scale-in animate-delay-300 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+  <div className="w-10 h-10 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 sm:mb-4 hover-scale">
+    <LocationIcon />
+  </div>
+  <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">DITTON</h3>
+  <p className="text-white/70 text-sm mb-3 sm:mb-4">улица Циетокшня 60, Даугавпилс</p>
+  <button
+    onClick={() => window.open("https://maps.app.goo.gl/K9pU7X4npxN4f5yV8", "_blank")}
+    className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
+  >
+    {t("getDirections")}
+    <svg width="14" height="14" className="sm:w-4 sm:h-4 ml-2" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M5 12h14M12 5l7 7-7 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </button>
+</div>
         </div>
 
         {/* Google Maps Integration */}
