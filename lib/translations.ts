@@ -25,11 +25,11 @@ export const translations = {
     step1Title: "IZVĒLIETIES\nMODELI",
     step1Description: "Apple iPhone, Samsung Galaxy, Xiaomi Redmi",
     step2Title: "AUGŠUPIELĀDĒJIET\nFOTO/DIZAINU",
-    step2Description: "Augšupielādējiet foto / dizainu izmantojot QR, Bluetooth vai kabeli.",
+    step2Description: "Noskenējiet QR kodu, lai augšupielādētu savu fotoattēlu vai dizainu",
     step3Title: "APMAKSĀJIET\nPASŪTĪJUMU",
     step3Description: "Ātri un droši Apple Pay, Google Pay, Karte",
     step4Title: "SAŅEMIET\nVĀCIŅU",
-    step4Description: "Saņemiet vāciņu gatavu tikai 3 minūšu laikā.",
+    step4Description: "Saņemiet savu pilnīgi jauno vāciņu, gatavu tikai 3 minūšu laikā!",
 
     // Locations
     locationsTitle: "KUR MŪS ATRAST?",
@@ -48,9 +48,9 @@ export const translations = {
       "Mūsu automāti drukā vāciņus populārākajiem iPhone, Samsung Galaxy un Xiaomi Redmi modeļiem. Pieejamo modeļu saraksts tiek regulāri atjaunināts.",
     faq2Question: "Vai es varu augšupielādēt savu dizainu vai foto?",
     faq2Answer:
-      "Jā, protams! Jūs varat augšupielādēt jebkuru foto vai attēlu tieši no sava telefona, izmantojot QR kodu, Bluetooth vai kabeli.",
+      "Jā, protams! Jūs varat augšupielādēt jebkuru foto vai attēlu tieši no sava telefona, izmantojot QR kodu.",
     faq3Question: "Cik ilga ir vāciņa drukāšana?",
-    faq3Answer: "Viss process, no dizaina augšupielādes līdz gatava vāciņa saņemšanai, aizņem ne vairāk kā 3 minūtes.",
+    faq3Answer: "Dizaina izvēles laiks ir pilnībā atkarīgs no jums. Tiklīdz jūs apstiprināsiet savu gala maketu, vāciņa automātiskā apdruka aizņems tikai 3 minūtes.izaina izvēle un sagatavošana ir radošs process. Tiklīdz makets būs gatavs, mēs nodrukāsim jūsu unikālo vāciņu tikai 3 minūtēs!",
     faq4Question: "No kāda materiāla ir izgatavoti vāciņi?",
     faq4Answer:
       "Mēs izmantojam augstas kvalitātes un izturīgus materiālus, kas nodrošina drošu aizsardzību jūsu telefonam. Cenā ir iekļauts jauns vāciņš ar druku.",
@@ -94,11 +94,11 @@ export const translations = {
     step1Title: "ВЫБЕРИТЕ\nМОДЕЛЬ",
     step1Description: "Apple iPhone, Samsung Galaxy, Xiaomi Redmi",
     step2Title: "ЗАГРУЗИТЕ\nФОТО/ДИЗАЙН",
-    step2Description: "Загрузите фото / дизайн через QR, Bluetooth или кабель.",
+    step2Description: "Отсканируйте QR-код, чтобы загрузить любое фото или дизайн.",
     step3Title: "ОПЛАТИТЕ\nЗАКАЗ",
     step3Description: "Быстро и безопасно Apple Pay, Google Pay, Карта",
     step4Title: "ПОЛУЧИТЕ\nЧЕХОЛ",
-    step4Description: "Получите кейс готовый всего за 3 минуты.",
+    step4Description: "Ваш новый уникальный чехол по вашему дизайну будет готов всего за 3 минуты!",
 
     // Locations
     locationsTitle: "ГДЕ НАС НАЙТИ?",
@@ -117,12 +117,10 @@ export const translations = {
       "Наши автоматы печатают чехлы для самых популярных моделей iPhone, Samsung Galaxy и Xiaomi Redmi. Список доступных моделей регулярно обновляется.",
     faq2Question: "Могу ли я загрузить свой дизайн или фото?",
     faq2Answer:
-      "Да, конечно! Вы можете загрузить любое фото или изображение прямо с телефона через QR-код, Bluetooth или кабель.",
+      "Да, конечно! Вы можете загрузить любое фото или изображение прямо с телефона через QR-код.",
     faq3Question: "Сколько времени занимает печать чехла?",
-    faq3Answer: "Весь процесс, от загрузки дизайна до получения готового чехла, занимает не более 3 минут.",
-    faq4Question: "Из какого материала сделаны чехлы?",
-    faq4Answer:
-      "Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
+    faq3Answer: "Время на выбор дизайна полностью зависит от вас. Как только вы утвердите свой макет, автоматическая печать чехла займёт всего 3 минуты.",
+    faq4Answer:"Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
 
     // Newsletter
     newsletterTitle: "УЗНАВАЙТЕ ПЕРВЫМИ О НОВИНКАХ!",
@@ -163,11 +161,11 @@ export const translations = {
     step1Title: "CHOOSE\nMODEL",
     step1Description: "Apple iPhone, Samsung Galaxy, Xiaomi Redmi",
     step2Title: "UPLOAD\nPHOTO/DESIGN",
-    step2Description: "Upload a photo / design via QR, Bluetooth or cable.",
+    step2Description: "Scan the QR code to upload your photo or design",
     step3Title: "PAY FOR\nORDER",
     step3Description: "Fast and secure Apple Pay, Google Pay, Card",
     step4Title: "GET YOUR\nCASE",
-    step4Description: "Receive your case ready in just 3 minutes.",
+    step4Description: "Your new custom case will be ready in as little as 3 minutes!",
 
     // Locations
     locationsTitle: "WHERE TO FIND US?",
@@ -186,10 +184,10 @@ export const translations = {
       "Our machines print cases for the most popular iPhone, Samsung Galaxy, and Xiaomi Redmi models. The list of available models is regularly updated.",
     faq2Question: "Can I upload my own design or photo?",
     faq2Answer:
-      "Yes, of course! You can upload any photo or image directly from your phone via QR code, Bluetooth, or cable.",
+      "Yes, of course! You can upload any photo or image directly from your phone via QR code.",
     faq3Question: "How long does it take to print a case?",
     faq3Answer:
-      "The entire process, from uploading the design to receiving the finished case, takes no more than 3 minutes.",
+      "The time spent choosing the design is entirely up to you. Once you approve your final layout, the automated printing of the case takes just 3 minutes.",
     faq4Question: "What material are the cases made of?",
     faq4Answer:
       "We use high-quality and durable materials that provide reliable protection for your phone. The price includes a new case with printing.",
