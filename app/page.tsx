@@ -190,7 +190,7 @@ export default function HomePage() {
               <LocationIcon />
             </div>
             <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">ORIGO</h3>
-            <p className="text-white/70 text-sm mb-3 sm:mb-4">Привокзальная площадь 2, Рига</p>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">Stacijas laukums 2, Rīga</p>
             <button
               onClick={() => window.open("https://maps.google.com/?q=Origo+Riga", "_blank")}
               className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
@@ -214,7 +214,7 @@ export default function HomePage() {
               <LocationIcon />
             </div>
             <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">GALERIJA CENTRS</h3>
-            <p className="text-white/70 text-sm mb-3 sm:mb-4">ул. Аудею 16, Рига</p>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">Audēju iela 16, Rīga</p>
             <button
               onClick={() => window.open("https://maps.google.com/?q=Galerija+Centrs+Riga", "_blank")}
               className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
@@ -238,7 +238,7 @@ export default function HomePage() {
               <LocationIcon />
             </div>
             <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">DOMINA SHOPPING</h3>
-            <p className="text-white/70 text-sm mb-3 sm:mb-4">Иерикю 3, Рига</p>
+            <p className="text-white/70 text-sm mb-3 sm:mb-4">Ieriķu iela 3, Rīga</p>
             <button
               onClick={() => window.open("https://maps.google.com/?q=Domina+Shopping+Riga", "_blank")}
               className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
@@ -262,9 +262,9 @@ export default function HomePage() {
     <LocationIcon />
   </div>
   <h3 className="text-white font-bold text-xl sm:text-2xl mb-2">DITTON</h3>
-  <p className="text-white/70 text-sm mb-3 sm:mb-4">улица Циетокшня 60, Даугавпилс</p>
+  <p className="text-white/70 text-sm mb-3 sm:mb-4">Cietokšņa iela 60, Daugavpils</p>
   <button
-    onClick={() => window.open("https://maps.app.goo.gl/K9pU7X4npxN4f5yV8", "_blank")}
+    onClick={() => window.open("https://maps.google.com/?cid=9063482418870463111&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ", "_blank")}
     className="text-white text-sm font-semibold flex items-center hover:text-[#aae0f5] transition-colors btn-hover"
   >
     {t("getDirections")}
