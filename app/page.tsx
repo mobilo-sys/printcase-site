@@ -487,10 +487,10 @@ export default function HomePage() {
               </div>
               <h3 className="text-white font-bold text-xl sm:text-2xl mb-4 sm:mb-6">{t("phone")}</h3>
               <a
-                href="tel:+37122816000"
+                href="tel:+37129022999"
                 className="text-white/80 text-lg sm:text-xl hover:text-white transition-colors btn-hover"
               >
-                +371 22816000
+                +371 29022999
               </a>
             </div>
           </div>
