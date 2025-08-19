@@ -50,7 +50,7 @@ export const translations = {
     faq2Answer:
       "Jā, protams! Jūs varat augšupielādēt jebkuru foto vai attēlu tieši no sava telefona, izmantojot QR kodu.",
     faq3Question: "Cik ilga ir vāciņa drukāšana?",
-    faq3Answer: "Dizaina izvēles laiks ir pilnībā atkarīgs no jums. Tiklīdz jūs apstiprināsiet savu gala maketu, vāciņa automātiskā apdruka aizņems tikai 3 minūtes.izaina izvēle un sagatavošana ir radošs process. Tiklīdz makets būs gatavs, mēs nodrukāsim jūsu unikālo vāciņu tikai 3 minūtēs!",
+    faq3Answer: "Dizaina izvēles laiks ir pilnībā atkarīgs no jums. Tiklīdz jūs apstiprināsiet savu gala maketu, vāciņa automātiskā apdruka aizņems tikai 3 minūtes.",
     faq4Question: "No kāda materiāla ir izgatavoti vāciņi?",
     faq4Answer:
       "Mēs izmantojam augstas kvalitātes un izturīgus materiālus, kas nodrošina drošu aizsardzību jūsu telefonam. Cenā ir iekļauts jauns vāciņš ar druku.",
@@ -74,7 +74,7 @@ export const translations = {
     // Header
     about: "О НАС",
     howItWorks: "КАК ЭТО РАБОТАЕТ",
-    gallery: "ГАЛЕРЕЯ ДИЗАЙНОВ",
+    gallery: "ГАЛЕРЕЯ",
     contacts: "КОНТАКТЫ",
     findDevice: "НАЙТИ АППАРАТ",
 
