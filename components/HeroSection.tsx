@@ -1,4 +1,6 @@
 "use client"
+// FILE: components/HeroSection.tsx
+
 // Import the hook for language translations
 import { useLanguage } from "@/hooks/use-language"
 // Import the Link component for navigation
@@ -21,7 +23,11 @@ export default function HeroSection() {
         </div>
 
         {/* Hero Content */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-full px-4 sm:px-6 animate-slide-up animate-delay-200 -mt-10 top-[200px] sm:top-[400px] md:top-[500px] lg:top-[600px] xl:top-[620px]">
+        {/* * CHANGE WAS MADE HERE
+          * Increased the 'top' values for each screen size to move the text block down
+          * and prevent it from overlapping with the image above.
+        */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-full px-4 sm:px-6 animate-slide-up animate-delay-200 -mt-10 top-[260px] sm:top-[460px] md:top-[560px] lg:top-[660px] xl:top-[720px]">
           <h1
             className="text-white text-center font-black 
             text-[32px] leading-[36px] tracking-[-0.64px]
@@ -47,7 +53,6 @@ export default function HeroSection() {
           </p>
 
           <div className="flex justify-center animate-fade-in animate-delay-400">
-            {/* The button is replaced with a Link component to scroll to the #locations section */}
             <Link
               href="#locations"
               className="btn-hover bg-white text-[#0b388a] px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 rounded-full hover:bg-gray-200 transition-colors text-sm sm:text-base md:text-lg lg:text-xl font-black font-sans tracking-wide uppercase"
