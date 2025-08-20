@@ -9,7 +9,7 @@ export default function HeroSection() {
   const { t } = useLanguage()
 
   return (
-    <main className="relative px-4 sm:px-6 py-8 sm:py-16 pt-20 sm:pt-32 max-w-7xl mx-auto sm:mb-80 mb-16">
+    <main className="relative px-4 sm:px-6 py-8 sm:py-16 pt-10 sm:pt-16 max-w-7xl mx-auto sm:mb-80 mb-16">
       <div className="text-center relative">
         {/* Hero Image */}
         <div className="relative mb-8 sm:mb-16 animate-scale-in">
