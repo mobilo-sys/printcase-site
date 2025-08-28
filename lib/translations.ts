@@ -256,7 +256,7 @@ export const translations = {
     followUs: "Jälgi meid:",
     copyright: "© 2025 PRINTCASE EXPRESS. Kõik õigused kaitstud.",
   },
-  // --- LITHUANIAN (LT) ---
+ // --- LITHUANIAN (LT) ---
   lt: {
     // Header
     about: "APIE MUS",
@@ -271,4 +271,62 @@ export const translations = {
     // About section
     aboutTitle: "Kas yra Printcase Express?",
     aboutSubtitle: "Revoliucinė personalizuotų telefono dėklų gamybos technologija",
-    aboutDescription: "Pamirškite ilgą laukimą. M
+    aboutDescription: "Pamirškite ilgą laukimą. Mūsų modernūs aparatai leidžia sukurti unikalų dėklą su savo dizainu arba pasirinkti iš paruoštos galerijos. Tai greita, kokybiška ir patogu.",
+
+    // How it works
+    howItWorksTitle: "KAIP TAI VEIKIA?",
+    howItWorksSubtitle: "Tik 4 paprasti žingsniai iki jūsų svajonių dėklo",
+    step1Title: "PASIRINKITE\nMODELĮ",
+    step1Description: "Apple iPhone, Samsung Galaxy, Xiaomi Redmi",
+    step2Title: "ĮKELKITE\nNUOTRAUKĄ/DIZAINĄ",
+    step2Description: "Nuskenuokite QR kodą, kad įkeltumėte savo nuotrauką ar dizainą.",
+    step3Title: "APMOKĖKITE\nUŽSAKYMĄ",
+    step3Description: "Greitai ir saugiai su Apple Pay, Google Pay, kortele.",
+    step4Title: "GAUKITE\nDĖKLĄ",
+    step4Description: "Jūsų naujas, individualus dėklas bus paruoštas vos per 3 minutes!",
+
+    // Locations
+    locationsSubtitle: "Mūsų aparatai yra populiariuose prekybos centruose.",
+    getDirections: "Gauti nuorodas",
+
+    // Gallery
+    galleryTitle: "ĮKVĖPIMAS JŪSŲ IDĖJOMS",
+    gallerySubtitle: "Pasisemkite įkvėpimo iš mūsų populiarių dizainų",
+
+    // FAQ
+    faqTitle: "DAŽNIAUSIAI UŽDUODAMI KLAUSIMAI",
+    faq1Question: "Kokius telefonų modelius palaikote?",
+    faq1Answer: "Mūsų aparatai spausdina dėklus populiariausiems iPhone, Samsung Galaxy ir Xiaomi Redmi modeliams. Galimų modelių sąrašas reguliariai atnaujinamas.",
+    faq2Question: "Ar galiu įkelti savo dizainą ar nuotrauką?",
+    faq2Answer: "Taip, žinoma! Galite įkelti bet kokią nuotrauką ar paveikslėlį tiesiai iš savo telefono per QR kodą.",
+    faq3Question: "Kiek laiko trunka dėklo spausdinimas?",
+    faq3Answer: "Laikas, kurį praleisite renkantis dizainą, priklauso tik nuo jūsų. Kai patvirtinsite galutinį maketą, automatinis dėklo spausdinimas užtruks vos 3 minutes.",
+    faq4Question: "Iš kokios medžiagos pagaminti dėklai?",
+    faq4Answer: "Naudojame aukštos kokybės ir patvarias medžiagas, kurios užtikrina patikimą jūsų telefono apsaugą. Į kainą įskaičiuotas naujas dėklas su spauda.",
+
+    // Newsletter
+    newsletterTitleDiscount: "GAUKITE 10% NUOLAIDĄ!",
+    newsletterSubtitleDiscount: "Prenumeruokite naujienas ir gaukite 10% nuolaidos kodą savo pirmajam užsakymui.",
+    getDiscountButton: "Gauti nuolaidą",
+    emailPlaceholder: "Jūsų el. paštas",
+
+    // Contact
+    contactTitle: "SUSISIEKITE SU MUMIS",
+    email: "EL. PAŠTAS",
+    phone: "TELEFONAS",
+
+    // Footer
+    followUs: "Sekite mus:",
+    copyright: "© 2025 PRINTCASE EXPRESS. Visos teisės saugomos.",
+  },
+}
+
+// This function remains the same
+export const getTranslation = (language: Language, key: string): string => {
+  const keys = key.split(".")
+  let value: any = translations[language]
+  for (const k of keys) {
+    value = value?.[k]
+  }
+  return value || key
+}
