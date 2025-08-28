@@ -1,35 +1,47 @@
 "use client"
 // FILE: components/Navbar.tsx
 
-// Import useState for managing the menu's open/close state
-import { useState } from "react"
-// Import the hook for language translations
-import { useLanguage } from "@/hooks/use-language"
-// Import the Link component for navigation
+// Import useState and useEffect for managing the dropdown
+import { useState, useEffect, useRef } from "react"
+// Import hooks and components
+import { useLanguage, Language } from "@/hooks/use-language" // Assuming Language type is exported from use-language
 import Link from "next/link"
 
-// SVG icon for the hamburger menu button
-const HamburgerIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 12H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M3 6H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M3 18H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
+// ... (Your HamburgerIcon and CloseIcon components should be here) ...
+const HamburgerIcon = () => ( <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M3 6H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M3 18H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg> )
+const CloseIcon = () => ( <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg> )
 
-// SVG icon for the close (X) button
-const CloseIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
 
 // Main Navbar component
 export default function Navbar() {
-  // State for menu visibility. 'false' means the menu is closed by default.
+  // State for the main mobile menu
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // State for the new language dropdown
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
   const { language, setLanguage, t } = useLanguage()
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // This effect closes the dropdown if you click outside of it
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsLangDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [dropdownRef])
+
+  // Array of available languages for the dropdown
+  const availableLanguages: { code: Language; name: string }[] = [
+    { code: "lv", name: "LV" },
+    { code: "ru", name: "RU" },
+    { code: "en", name: "EN" },
+    { code: "et", name: "ET" },
+    { code: "lt", name: "LT" },
+  ]
 
   return (
     <>
@@ -41,20 +53,17 @@ export default function Navbar() {
           py-6 rounded-none md:rounded-full bg-[#0B388A]/80 backdrop-blur-xl border-b md:border border-white/10
           shadow-[0_3px_8px_0_rgba(6,44,114,0.70),0_2px_4px_0_rgba(255,255,255,0.10)_inset]"
       >
-        {/* --- MOBILE LAYOUT (md:hidden) --- */}
+        {/* --- MOBILE LAYOUT --- */}
         <div className="flex md:hidden items-center justify-between px-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center hover-scale">
-            <img src="/Logo.svg" alt="PRINTCASE" className="w-32 h-8" />
-          </Link>
-
-          {/* Hamburger Menu Icon */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <HamburgerIcon />
-          </button>
+            <Link href="/" className="flex items-center hover-scale">
+              <img src="/Logo.svg" alt="PRINTCASE" className="w-32 h-8" />
+            </Link>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <HamburgerIcon />
+            </button>
         </div>
 
-        {/* --- TABLET & DESKTOP LAYOUTS (hidden md:flex) --- */}
+        {/* --- TABLET & DESKTOP LAYOUTS --- */}
         <div className="hidden md:flex items-center justify-between xl:gap-8 px-4 xl:px-8">
             <div className="flex items-center hover-scale xl:min-w-[120px]">
               <Link href="/">
@@ -64,17 +73,38 @@ export default function Navbar() {
             <nav className="hidden xl:flex items-center gap-8 min-w-[480px]">
                 <a href="#about" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("about")}</a>
                 <a href="#how-it-works" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("howItWorks")}</a>
-                <a href="#gallery" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("gallery")}</a>
                 <a href="#locations" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("locationsTitle")}</a>
                 <a href="#contacts" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("contacts")}</a>
             </nav>
-            <div className="flex items-center gap-6">
-                <div className="flex items-center gap-2">
-                    <button onClick={() => setLanguage("lv")} className={`text-sm transition-colors px-2 py-1 rounded min-w-[28px] ${language === "lv" ? "bg-white text-blue-900" : "text-white hover:text-sky-200"}`}>LV</button>
-                    <button onClick={() => setLanguage("ru")} className={`text-sm transition-colors px-2 py-1 rounded min-w-[28px] ${language === "ru" ? "bg-white text-blue-900" : "text-white hover:text-sky-200"}`}>RU</button>
-                    <button onClick={() => setLanguage("en")} className={`text-sm transition-colors px-2 py-1 rounded min-w-[28px] ${language === "en" ? "bg-white text-blue-900" : "text-white hover:text-sky-200"}`}>EN</button>
+            <div className="flex items-center gap-6" ref={dropdownRef}>
+                
+                {/* --- NEW LANGUAGE DROPDOWN --- */}
+                <div className="relative">
+                  <button
+                    onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                    className="flex items-center justify-center text-sm transition-colors px-3 py-1 rounded bg-white text-blue-900 min-w-[50px]"
+                  >
+                    {language.toUpperCase()}
+                    <svg className={`w-4 h-4 ml-1 transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </button>
+
+                  {isLangDropdownOpen && (
+                    <div className="absolute top-full right-0 mt-2 w-24 bg-white rounded-md shadow-lg py-1 z-10">
+                      {availableLanguages.map((lang) => (
+                        <button
+                          key={lang.code}
+                          onClick={() => {
+                            setLanguage(lang.code)
+                            setIsLangDropdownOpen(false)
+                          }}
+                          className="w-full text-left px-4 py-2 text-sm text-blue-900 hover:bg-sky-100"
+                        >
+                          {lang.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {/* The "FIND DEVICE" button was here. It has been removed. */}
             </div>
         </div>
       </div>
@@ -93,19 +123,17 @@ export default function Navbar() {
             <CloseIcon />
           </button>
         </div>
-
-        {/* Navigation Links inside the panel */}
         <nav className="flex flex-col items-center justify-center h-full -mt-16 gap-8">
           <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("about")}</a>
           <a href="#how-it-works" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("howItWorks")}</a>
           <a href="#locations" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("locationsTitle")}</a>
           <a href="#contacts" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("contacts")}</a>
-
-          {/* Language Switcher */}
           <div className="flex items-center gap-4 pt-8">
-            <button onClick={() => { setLanguage("lv"); setIsMenuOpen(false); }} className={`text-xl transition-colors px-3 py-2 rounded-lg ${language === "lv" ? "bg-white text-blue-900" : "text-white"}`}>LV</button>
-            <button onClick={() => { setLanguage("ru"); setIsMenuOpen(false); }} className={`text-xl transition-colors px-3 py-2 rounded-lg ${language === "ru" ? "bg-white text-blue-900" : "text-white"}`}>RU</button>
-            <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`text-xl transition-colors px-3 py-2 rounded-lg ${language === "en" ? "bg-white text-blue-900" : "text-white"}`}>EN</button>
+            {availableLanguages.map((lang) => (
+              <button key={lang.code} onClick={() => { setLanguage(lang.code); setIsMenuOpen(false); }} className={`text-xl transition-colors px-3 py-2 rounded-lg ${language === lang.code ? "bg-white text-blue-900" : "text-white"}`}>
+                {lang.name}
+              </button>
+            ))}
           </div>
         </nav>
       </div>
