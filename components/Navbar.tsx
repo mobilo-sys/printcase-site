@@ -48,7 +48,7 @@ export default function Navbar() {
             <img src="/Logo.svg" alt="PRINTCASE" className="w-32 h-8" />
           </Link>
 
-          {/* Hamburger Menu Icon. It toggles the isMenuOpen state on click. */}
+          {/* Hamburger Menu Icon */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <HamburgerIcon />
           </button>
@@ -65,7 +65,6 @@ export default function Navbar() {
                 <a href="#about" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("about")}</a>
                 <a href="#how-it-works" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("howItWorks")}</a>
                 <a href="#gallery" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("gallery")}</a>
-                {/* 3. ADDED "KUR MŪS ATRAST?" link to the PC menu */}
                 <a href="#locations" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("locationsTitle")}</a>
                 <a href="#contacts" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("contacts")}</a>
             </nav>
@@ -75,9 +74,7 @@ export default function Navbar() {
                     <button onClick={() => setLanguage("ru")} className={`text-sm transition-colors px-2 py-1 rounded min-w-[28px] ${language === "ru" ? "bg-white text-blue-900" : "text-white hover:text-sky-200"}`}>RU</button>
                     <button onClick={() => setLanguage("en")} className={`text-sm transition-colors px-2 py-1 rounded min-w-[28px] ${language === "en" ? "bg-white text-blue-900" : "text-white hover:text-sky-200"}`}>EN</button>
                 </div>
-                <Link href="#locations" className="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-gray-100 transition-colors text-sm font-bold whitespace-nowrap min-w-[140px]">
-                    {t("findDevice")}
-                </Link>
+                {/* The "FIND DEVICE" button was here. It has been removed. */}
             </div>
         </div>
       </div>
@@ -101,13 +98,8 @@ export default function Navbar() {
         <nav className="flex flex-col items-center justify-center h-full -mt-16 gap-8">
           <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("about")}</a>
           <a href="#how-it-works" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("howItWorks")}</a>
-          {/* 1. REMOVED "DESIGN GALLERY" from mobile menu */}
-          {/* <a href="#gallery" ... /> */}
-          {/* 2. ADDED "KUR MŪS ATRAST?" to the mobile menu */}
           <a href="#locations" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("locationsTitle")}</a>
           <a href="#contacts" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("contacts")}</a>
-          {/* 1. REMOVED "FIND DEVICE" from mobile menu */}
-          {/* <Link href="#locations" ... /> */}
 
           {/* Language Switcher */}
           <div className="flex items-center gap-4 pt-8">
