@@ -27,7 +27,7 @@ const CloseIcon = () => (
 
 // Main Navbar component
 export default function Navbar() {
-  // 1. State for menu visibility. 'false' means the menu is closed by default.
+  // State for menu visibility. 'false' means the menu is closed by default.
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { language, setLanguage, t } = useLanguage()
 
@@ -48,26 +48,26 @@ export default function Navbar() {
             <img src="/Logo.svg" alt="PRINTCASE" className="w-32 h-8" />
           </Link>
 
-          {/* 2. Hamburger Menu Icon. It toggles the isMenuOpen state on click. */}
+          {/* Hamburger Menu Icon. It toggles the isMenuOpen state on click. */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <HamburgerIcon />
           </button>
         </div>
 
         {/* --- TABLET & DESKTOP LAYOUTS (hidden md:flex) --- */}
-        {/* This is the existing code for larger screens, no changes needed here. */}
         <div className="hidden md:flex items-center justify-between xl:gap-8 px-4 xl:px-8">
-            {/* ... (Your existing code for Tablet and Desktop) ... */}
             <div className="flex items-center hover-scale xl:min-w-[120px]">
               <Link href="/">
                 <img src="/Logo.svg" alt="PRINTCASE" className="w-32 h-8 xl:w-40 xl:h-10" />
               </Link>
             </div>
             <nav className="hidden xl:flex items-center gap-8 min-w-[480px]">
-                <a href="#about" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap min-w-[80px] text-center">{t("about")}</a>
-                <a href="#how-it-works" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap min-w-[140px] text-center">{t("howItWorks")}</a>
-                <a href="#gallery" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap min-w-[120px] text-center">{t("gallery")}</a>
-                <a href="#contacts" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap min-w-[80px] text-center">{t("contacts")}</a>
+                <a href="#about" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("about")}</a>
+                <a href="#how-it-works" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("howItWorks")}</a>
+                <a href="#gallery" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("gallery")}</a>
+                {/* 3. ADDED "KUR MŪS ATRAST?" link to the PC menu */}
+                <a href="#locations" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("locationsTitle")}</a>
+                <a href="#contacts" className="text-white hover:text-sky-200 transition-colors text-sm whitespace-nowrap text-center">{t("contacts")}</a>
             </nav>
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
@@ -82,9 +82,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* --- 3. MOBILE MENU PANEL --- */}
-      {/* This panel is positioned off-screen to the right ('translate-x-full'). */}
-      {/* When isMenuOpen is true, the class changes to 'translate-x-0', sliding it into view. */}
+      {/* --- MOBILE MENU PANEL --- */}
       <div
         className={`fixed top-0 right-0 h-full w-full bg-[#0B388A] z-50 transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -99,17 +97,19 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* 4. Navigation Links inside the panel */}
+        {/* Navigation Links inside the panel */}
         <nav className="flex flex-col items-center justify-center h-full -mt-16 gap-8">
           <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("about")}</a>
           <a href="#how-it-works" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("howItWorks")}</a>
-          <a href="#gallery" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("gallery")}</a>
+          {/* 1. REMOVED "DESIGN GALLERY" from mobile menu */}
+          {/* <a href="#gallery" ... /> */}
+          {/* 2. ADDED "KUR MŪS ATRAST?" to the mobile menu */}
+          <a href="#locations" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("locationsTitle")}</a>
           <a href="#contacts" onClick={() => setIsMenuOpen(false)} className="text-white text-2xl font-bold">{t("contacts")}</a>
-          <Link href="#locations" onClick={() => setIsMenuОpen(false)} className="text-white text-2xl font-bold">
-            {t("findDevice")}
-          </Link>
+          {/* 1. REMOVED "FIND DEVICE" from mobile menu */}
+          {/* <Link href="#locations" ... /> */}
 
-          {/* 5. Language Switcher moved here */}
+          {/* Language Switcher */}
           <div className="flex items-center gap-4 pt-8">
             <button onClick={() => { setLanguage("lv"); setIsMenuOpen(false); }} className={`text-xl transition-colors px-3 py-2 rounded-lg ${language === "lv" ? "bg-white text-blue-900" : "text-white"}`}>LV</button>
             <button onClick={() => { setLanguage("ru"); setIsMenuOpen(false); }} className={`text-xl transition-colors px-3 py-2 rounded-lg ${language === "ru" ? "bg-white text-blue-900" : "text-white"}`}>RU</button>
