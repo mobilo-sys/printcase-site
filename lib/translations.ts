@@ -1,6 +1,6 @@
 // FILE: lib/translations.ts
 
-// Add 'et' and 'lt' to the Language type
+// The Language type includes all supported languages
 export type Language = "lv" | "ru" | "en" | "et" | "lt"
 
 export const translations = {
@@ -12,10 +12,11 @@ export const translations = {
     locationsTitle: "KUR MŪS ATRAST",
     contacts: "KONTAKTI",
 
-    // Hero
+    // Hero Section
     heroTitle: "TAVS STILS\nPAR 3 MINŪTĒM!",
     heroSubtitle: "Mēs pārvēršam tavas idejas realitātē dažu minūšu laikā.",
-    findLocationButton: "ATRAST APARĀTU",
+    // The button text is updated to your choice
+    findLocationButton: "PARĀDĪT KARTĒ",
 
     // ... (rest of the translations are the same)
     aboutTitle: "Kas ir Printcase Express?",
@@ -64,7 +65,8 @@ export const translations = {
     // Hero
     heroTitle: "ТВОЙ СТИЛЬ\nЗА 3 МИНУТЫ!",
     heroSubtitle: "Мы превращаем твои идеи в реальность за считанные минуты.",
-    findLocationButton: "НАЙТИ АППАРАТ",
+    // The button text is updated to your choice
+    findLocationButton: "ПОКАЗАТЬ НА КАРТЕ",
     // ... (rest of the translations)
   },
   // --- ENGLISH (EN) ---
@@ -77,7 +79,8 @@ export const translations = {
     // Hero
     heroTitle: "YOUR STYLE\nIN 3 MINUTES!",
     heroSubtitle: "We turn your ideas into reality in a matter of minutes.",
-    findLocationButton: "FIND A MACHINE",
+    // The button text is updated to your choice
+    findLocationButton: "VIEW ON MAP",
     // ... (rest of the translations)
   },
   // --- ESTONIAN (ET) ---
@@ -90,7 +93,8 @@ export const translations = {
     // Hero
     heroTitle: "SINU STIIL\n3 MINUTIGA!",
     heroSubtitle: "Teeme sinu ideed teoks vaid mõne minutiga.",
-    findLocationButton: "LEIA AUTOMAAT",
+    // The button text is updated to your choice
+    findLocationButton: "VAATA KAARDIL",
     // ... (rest of the translations)
   },
   // --- LITHUANIAN (LT) ---
@@ -103,7 +107,8 @@ export const translations = {
     // Hero
     heroTitle: "TAVO STILIUS\nPER 3 MINUTES!",
     heroSubtitle: "Paversime jūsų idėjas realybe vos per kelias minutes.",
-    findLocationButton: "RASTI APARATĄ",
+    // The button text is updated to your choice
+    findLocationButton: "RODYTI ŽEMĖLAPYJE",
     // ... (rest of the translations)
   },
 }
