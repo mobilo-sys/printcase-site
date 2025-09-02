@@ -53,10 +53,10 @@ export const translations = {
     faq4Question: "No kāda materiāla ir izgatavoti vāciņi?",
     faq4Answer: "Mēs izmantojam augstas kvalitātes un izturīgus materiālus, kas nodrošina drošu aizsardzību jūsu telefonam. Cenā ir iekļauts jauns vāciņš ar druku.",
 
-    // Newsletter - Updated with a general offer
-    newsletterTitle: "EKSKLUZĪVI PIEDĀVĀJUMI",
-    newsletterSubtitle: "Abonējiet, lai pirmie uzzinātu par jaunumiem un īpašajiem piedāvājumiem.",
-    subscribeButton: "ABONĒT",
+    // Newsletter
+    newsletterTitleDiscount: "SAŅEMIET 10% ATLAIDI!",
+    newsletterSubtitleDiscount: "Abonējiet un saņemiet 10% atlaides kodu savam pirmajam pasūtījumam.",
+    getDiscountButton: "Saņemt atlaidi",
     emailPlaceholder: "Jūsu e-pasts",
     
     // Contact
@@ -117,10 +117,10 @@ export const translations = {
     faq4Question: "Из какого материала сделаны чехлы?",
     faq4Answer:"Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
 
-    // Newsletter - Updated with a general offer
-    newsletterTitle: "ЭКСКЛЮЗИВНЫЕ ПРЕДЛОЖЕНИЯ",
-    newsletterSubtitle: "Подпишитесь, чтобы первыми узнавать о новинках и специальных акциях.",
-    subscribeButton: "ПОДПИСАТЬСЯ",
+    // Newsletter
+    newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ!",
+    newsletterSubtitleDiscount: "Подпишитесь и получите промокод на 10% для вашего первого заказа.",
+    getDiscountButton: "Получить скидку",
     emailPlaceholder: "Ваш e-mail",
 
     // Contact
@@ -181,10 +181,10 @@ export const translations = {
     faq4Question: "What material are the cases made of?",
     faq4Answer: "We use high-quality, durable materials that provide reliable protection for your phone. The price includes a new case with your print.",
 
-    // Newsletter - Updated with a general offer
-    newsletterTitle: "GET EXCLUSIVE OFFERS",
-    newsletterSubtitle: "Subscribe to be the first to know about new arrivals and special promotions.",
-    subscribeButton: "SUBSCRIBE",
+    // Newsletter
+    newsletterTitleDiscount: "GET 10% OFF!",
+    newsletterSubtitleDiscount: "Subscribe and receive a 10% discount code for your first order.",
+    getDiscountButton: "Get Discount",
     emailPlaceholder: "Your e-mail",
 
     // Contact
@@ -245,10 +245,10 @@ export const translations = {
     faq4Question: "Mis materjalist on ümbrised valmistatud?",
     faq4Answer: "Kasutame kvaliteetseid ja vastupidavaid materjale, mis pakuvad teie telefonile usaldusväärset kaitset. Hind sisaldab uut prinditud ümbrist.",
 
-    // Newsletter - Updated with a general offer
-    newsletterTitle: "EKSKLUSIIVSED PAKKUMISED",
-    newsletterSubtitle: "Liituge, et olla esimene, kes kuuleb uutest toodetest ja eripakkumistest.",
-    subscribeButton: "LIITU",
+    // Newsletter
+    newsletterTitleDiscount: "SAA 10% ALLAHINDLUST!",
+    newsletterSubtitleDiscount: "Telli uudiskiri ja saa 10% sooduskood oma esimesele tellimusele.",
+    getDiscountButton: "Saa allahindlust",
     emailPlaceholder: "Sinu e-post",
 
     // Contact
@@ -309,12 +309,12 @@ export const translations = {
     faq4Question: "Iš kokios medžiagos pagaminti dėklai?",
     faq4Answer: "Naudojame aukštos kokybės ir patvarias medžiagas, kurios užtikrina patikimą jūsų telefono apsaugą. Į kainą įskaičiuotas naujas dėklas su spauda.",
 
-    // Newsletter - Updated with a general offer
-    newsletterTitle: "IŠSKIRTINIAI PASIŪLYMAI",
-    newsletterSubtitle: "Prenumeruokite, kad pirmieji sužinotumėte apie naujienas ir specialius pasiūlymus.",
-    subscribeButton: "PRENUMERUOTI",
+    // Newsletter
+    newsletterTitleDiscount: "GAUKITE 10% NUOLAIDĄ!",
+    newsletterSubtitleDiscount: "Prenumeruokite naujienas ir gaukite 10% nuolaidos kodą savo pirmajam užsakymui.",
+    getDiscountButton: "Gauti nuolaidą",
     emailPlaceholder: "Jūsų el. paštas",
-    
+
     // Contact
     contactTitle: "SUSISIEKITE SU MUMIS",
     email: "EL. PAŠTAS",
