@@ -17,10 +17,10 @@ export const translations = {
     heroSubtitle: "Mēs pārvēršam tavas idejas realitātē dažu minūšu laikā.",
     findLocationButton: "PARĀDĪT KARTĒ",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Kas ir Printcase Express?",
-    aboutSubtitle: "Vairāk nekā vāciņš — tavs stāsts.",
-    aboutDescription: "Pārvērt savus mīļākos mirkļus stilīgā aksesuārā. Augšupielādē tuvinieku, mājdzīvnieka foto vai savu īpašo dizainu un radi patiesi personisku lietu. Mūsu automāti nodrošinās augstas kvalitātes druku, lai tavas atmiņas vienmēr būtu līdzās, aizsargājot tavu telefonu.",
+    aboutSubtitle: "Revolucionāra personalizētu telefona vāciņu ražošanas tehnoloģija",
+    aboutDescription: "Aizmirstiet par ilgu gaidīšanu. Mūsu modernie automāti ļauj izveidot unikālu vāciņu ar savu dizainu vai izvēlēties no gatavas galerijas. Tas ir ātri, kvalitatīvi un ērti.",
 
     // How it works
     howItWorksTitle: "KĀ TAS DARBOJAS?",
@@ -81,12 +81,12 @@ export const translations = {
     heroSubtitle: "Мы превращаем твои идеи в реальность за считанные минуты.",
     findLocationButton: "ПОКАЗАТЬ НА КАРТЕ",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Что такое Printcase Express?",
-    aboutSubtitle: "Больше, чем чехол — твоя история.",
-    aboutDescription: "Преврати любимые моменты в стильный аксессуар. Загрузи фото близких, домашнего питомца или свой собственный дизайн, и создай по-настоящему личную вещь. Наши автоматы обеспечат высокое качество печати, чтобы твои воспоминания всегда были рядом, защищая твой телефон.",
+    aboutSubtitle: "Революционная технология изготовления персонализированных чехлов",
+    aboutDescription: "Забудьте о долгом ожидании. Наши современные автоматы позволяют создать уникальный чехол с вашим дизайном или выбрать из готовой галереи. Это быстро, качественно и удобно.",
 
-    // ... (rest of the translations)
+    // How it works
     howItWorksTitle: "КАК ЭТО РАБОТАЕТ?",
     howItWorksSubtitle: "Простые 4 шага до чехла твоей мечты",
     step1Title: "ВЫБЕРИТЕ\nМОДЕЛЬ",
@@ -97,10 +97,16 @@ export const translations = {
     step3Description: "Быстро и безопасно Apple Pay, Google Pay, Карта",
     step4Title: "ПОЛУЧИТЕ\nЧЕХОЛ",
     step4Description: "Ваш новый уникальный чехол будет готов всего за 3 минуты!",
+
+    // Locations
     locationsSubtitle: "Наши автоматы находятся в популярных торговых центрах",
     getDirections: "Как добраться",
+
+    // Gallery
     galleryTitle: "ВДОХНОВЕНИЕ ДЛЯ ВАШИХ ИДЕЙ",
     gallerySubtitle: "Вдохновитесь нашими популярными дизайнами",
+
+    // FAQ
     faqTitle: "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ",
     faq1Question: "Какие модели телефонов вы поддерживаете?",
     faq1Answer: "Наши автоматы печатают чехлы для самых популярных моделей iPhone, Samsung Galaxy и Xiaomi Redmi. Список доступных моделей регулярно обновляется.",
@@ -110,13 +116,19 @@ export const translations = {
     faq3Answer: "Время на выбор дизайна полностью зависит от вас. Как только вы утвердите свой макет, автоматическая печать чехла займёт всего 3 минуты.",
     faq4Question: "Из какого материала сделаны чехлы?",
     faq4Answer:"Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
+
+    // Newsletter
     newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ 10%!",
     newsletterSubtitleDiscount: "Подпишитесь и получите промокод на 10% для вашего первого заказа.",
     getDiscountButton: "Получить скидку",
     emailPlaceholder: "Ваш e-mail",
+
+    // Contact
     contactTitle: "СВЯЖИТЕСЬ С НАМИ",
     email: "EMAIL",
     phone: "ТЕЛЕФОН",
+
+    // Footer
     followUs: "Следите за нами:",
     copyright: "© 2025 PRINTCASE EXPRESS. Все права защищены.",
   },
@@ -133,12 +145,12 @@ export const translations = {
     heroSubtitle: "We turn your ideas into reality in a matter of minutes.",
     findLocationButton: "VIEW ON MAP",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "What is Printcase Express?",
-    aboutSubtitle: "More than a case — your story.",
-    aboutDescription: "Turn your favorite moments into a stylish accessory. Upload a photo of loved ones, a pet, or your own design to create something truly personal. Our machines ensure high-quality printing, so your memories are always with you, protecting your phone.",
+    aboutSubtitle: "Revolutionary technology for personalized phone cases",
+    aboutDescription: "Forget the long wait. Our modern machines allow you to create a unique case with your own design or choose from a ready-made gallery. It's fast, high-quality, and convenient.",
 
-    // ... (rest of the translations)
+    // How it works
     howItWorksTitle: "HOW IT WORKS?",
     howItWorksSubtitle: "Simple 4 steps to your dream case",
     step1Title: "CHOOSE\nMODEL",
@@ -149,10 +161,16 @@ export const translations = {
     step3Description: "Fast and secure with Apple Pay, Google Pay, or Card.",
     step4Title: "GET YOUR\nCASE",
     step4Description: "Your new custom case will be ready in as little as 3 minutes!",
+
+    // Locations
     locationsSubtitle: "Our machines are located in popular shopping centers.",
     getDirections: "Get directions",
+
+    // Gallery
     galleryTitle: "INSPIRATION FOR YOUR IDEAS",
     gallerySubtitle: "Get inspired by our popular designs",
+
+    // FAQ
     faqTitle: "FREQUENTLY ASKED QUESTIONS",
     faq1Question: "What phone models do you support?",
     faq1Answer: "Our machines print cases for the most popular iPhone, Samsung Galaxy, and Xiaomi Redmi models. The list of available models is regularly updated.",
@@ -162,13 +180,19 @@ export const translations = {
     faq3Answer: "The time spent choosing the design is entirely up to you. Once you approve your final layout, the automated printing of the case takes just 3 minutes.",
     faq4Question: "What material are the cases made of?",
     faq4Answer: "We use high-quality, durable materials that provide reliable protection for your phone. The price includes a new case with your print.",
+
+    // Newsletter
     newsletterTitleDiscount: "GET 10% OFF!",
     newsletterSubtitleDiscount: "Subscribe and receive a 10% discount code for your first order.",
     getDiscountButton: "Get Discount",
     emailPlaceholder: "Your e-mail",
+
+    // Contact
     contactTitle: "CONTACT US",
     email: "EMAIL",
     phone: "PHONE",
+
+    // Footer
     followUs: "Follow us:",
     copyright: "© 2025 PRINTCASE EXPRESS. All rights reserved.",
   },
@@ -185,12 +209,12 @@ export const translations = {
     heroSubtitle: "Teeme sinu ideed teoks vaid mõne minutiga.",
     findLocationButton: "VAATA KAARDIL",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Mis on Printcase Express?",
-    aboutSubtitle: "Rohkem kui ümbris — sinu lugu.",
-    aboutDescription: "Muuda oma lemmikhetked stiilseks aksessuaariks. Laadi üles pilt oma lähedastest, lemmikloomast või oma disain ja loo midagi tõeliselt isiklikku. Meie automaadid tagavad kvaliteetse trüki, et sinu mälestused oleksid alati sinuga kaasas, kaitstes samal ajal sinu telefoni.",
-    
-    // ... (rest of the translations)
+    aboutSubtitle: "Revolutsiooniline tehnoloogia isikupärastatud telefoniümbriste valmistamiseks",
+    aboutDescription: "Unustage pikk ootamine. Meie kaasaegsed automaadid võimaldavad teil luua unikaalse ümbrise oma disainiga või valida valmisgaleriist. See on kiire, kvaliteetne ja mugav.",
+
+    // How it works
     howItWorksTitle: "KUIDAS SEE TÖÖTAB?",
     howItWorksSubtitle: "Lihtsalt 4 sammu sinu unistuste ümbriseni",
     step1Title: "VALI\nMUDEL",
@@ -201,10 +225,16 @@ export const translations = {
     step3Description: "Kiire ja turvaline Apple Pay, Google Pay, kaardimakse.",
     step4Title: "SAA ÜMBRIS\nKÄTTE",
     step4Description: "Sinu uus ja eriline ümbris valmib vaid 3 minutiga!",
+
+    // Locations
     locationsSubtitle: "Meie automaadid asuvad populaarsetes kaubanduskeskustes.",
     getDirections: "Vaata teekonda",
+
+    // Gallery
     galleryTitle: "INSPIRATSIOON SINU IDEEDELE",
     gallerySubtitle: "Saa inspiratsiooni meie populaarsetest disainidest",
+
+    // FAQ
     faqTitle: "KORDUMA KIPPUVAD KÜSIMUSED",
     faq1Question: "Milliseid telefonimudeleid te toetate?",
     faq1Answer: "Meie automaadid prindivad ümbriseid kõige populaarsematele iPhone, Samsung Galaxy ja Xiaomi Redmi mudelitele. Saadaolevate mudelite nimekirja uuendatakse regulaarselt.",
@@ -214,13 +244,19 @@ export const translations = {
     faq3Answer: "Disaini valimisele kuluv aeg sõltub täielikult sinust. Kui olete oma lõpliku kujunduse kinnitanud, võtab ümbrise automaatne printimine aega vaid 3 minutit.",
     faq4Question: "Mis materjalist on ümbrised valmistatud?",
     faq4Answer: "Kasutame kvaliteetseid ja vastupidavaid materjale, mis pakuvad teie telefonile usaldusväärset kaitset. Hind sisaldab uut prinditud ümbrist.",
+
+    // Newsletter
     newsletterTitleDiscount: "SAA 10% ALLAHINDLUST!",
     newsletterSubtitleDiscount: "Telli uudiskiri ja saa 10% sooduskood oma esimesele tellimusele.",
     getDiscountButton: "Saa allahindlust",
     emailPlaceholder: "Sinu e-post",
+
+    // Contact
     contactTitle: "VÕTA MEIEGA ÜHENDUST",
     email: "E-POST",
     phone: "TELEFON",
+
+    // Footer
     followUs: "Jälgi meid:",
     copyright: "© 2025 PRINTCASE EXPRESS. Kõik õigused kaitstud.",
   },
@@ -237,12 +273,12 @@ export const translations = {
     heroSubtitle: "Paversime jūsų idėjas realybe vos per kelias minutes.",
     findLocationButton: "RODYTI ŽEMĖLAPYJE",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Kas yra Printcase Express?",
-    aboutSubtitle: "Daugiau nei dėklas — tavo istorija.",
-    aboutDescription: "Paverskite savo mėgstamiausias akimirkas stilingu aksesuaru. Įkelkite artimųjų, augintinio nuotrauką ar savo dizainą ir susikurkite tikrai asmenišką daiktą. Mūsų aparatai užtikrina aukštos kokybės spaudą, kad jūsų prisiminimai visada būtų šalia, saugantys jūsų telefoną.",
-    
-    // ... (rest of the translations)
+    aboutSubtitle: "Revoliucinė personalizuotų telefono dėklų gamybos technologija",
+    aboutDescription: "Pamirškite ilgą laukimą. Mūsų modernūs aparatai leidžia sukurti unikalų dėklą su savo dizainu arba pasirinkti iš paruoštos galerijos. Tai greita, kokybiška ir patogu.",
+
+    // How it works
     howItWorksTitle: "KAIP TAI VEIKIA?",
     howItWorksSubtitle: "Tik 4 paprasti žingsniai iki jūsų svajonių dėklo",
     step1Title: "PASIRINKITE\nMODELĮ",
@@ -253,10 +289,16 @@ export const translations = {
     step3Description: "Greitai ir saugiai su Apple Pay, Google Pay, kortele.",
     step4Title: "GAUKITE\nDĖKLĄ",
     step4Description: "Jūsų naujas, individualus dėklas bus paruoštas vos per 3 minutes!",
+
+    // Locations
     locationsSubtitle: "Mūsų aparatai yra populiariuose prekybos centruose.",
     getDirections: "Gauti nuorodas",
+
+    // Gallery
     galleryTitle: "ĮKVĖPIMAS JŪSŲ IDĖJOMS",
     gallerySubtitle: "Pasisemkite įkvėpimo iš mūsų populiarių dizainų",
+
+    // FAQ
     faqTitle: "DAŽNIAUSIAI UŽDUODAMI KLAUSIMAI",
     faq1Question: "Kokius telefonų modelius palaikote?",
     faq1Answer: "Mūsų aparatai spausdina dėklus populiariausiems iPhone, Samsung Galaxy ir Xiaomi Redmi modeliams. Galimų modelių sąrašas reguliariai atnaujinamas.",
@@ -266,13 +308,19 @@ export const translations = {
     faq3Answer: "Laikas, kurį praleisite renkantis dizainą, priklauso tik nuo jūsų. Kai patvirtinsite galutinį maketą, automatinis dėklo spausdinimas užtruks vos 3 minutes.",
     faq4Question: "Iš kokios medžiagos pagaminti dėklai?",
     faq4Answer: "Naudojame aukštos kokybės ir patvarias medžiagas, kurios užtikrina patikimą jūsų telefono apsaugą. Į kainą įskaičiuotas naujas dėklas su spauda.",
+
+    // Newsletter
     newsletterTitleDiscount: "GAUKITE 10% NUOLAIDĄ!",
     newsletterSubtitleDiscount: "Prenumeruokite naujienas ir gaukite 10% nuolaidos kodą savo pirmajam užsakymui.",
     getDiscountButton: "Gauti nuolaidą",
     emailPlaceholder: "Jūsų el. paštas",
+
+    // Contact
     contactTitle: "SUSISIEKITE SU MUMIS",
     email: "EL. PAŠTAS",
     phone: "TELEFONAS",
+
+    // Footer
     followUs: "Sekite mus:",
     copyright: "© 2025 PRINTCASE EXPRESS. Visos teisės saugomos.",
   },
