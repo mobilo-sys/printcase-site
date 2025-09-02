@@ -89,7 +89,7 @@ export default function HomePage() {
       <section className="relative sm:py-32 md:py-24 w-full overflow-hidden animate-fade-in" id="gallery">
         <div className="absolute inset-0 w-full h-full z-0" style={{ backgroundImage: "url(/Vector.svg)", backgroundSize: "100% auto", backgroundRepeat: "no-repeat", backgroundPosition: "center 100%" }} />
         <div className="relative z-10">
-          <div className="text-center mb-12 sm:mb-16 px-4 sm:px-6 animate-slide-up"><h2 className="text-white text-center font-black uppercase tracking-[-0.64px] text-[32px] leading-[32px] sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px] md:text-[40px] md:leading-[40px] md:tracking-[-0.8px] lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px] xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px] mb-4 sm:mb-6 font-sans">{t("galleryTitle")}</h2><p className="text-white/80 text-center font-normal text-base sm:text-lg md:text-xl leading-relaxed">{t("gallerySubtitle")}</p></div>
+          <div className="text-center mb-12 sm:mb-16 px-4 sm:px-6 animate-slide-up"><h2 className="text-white text-center font-black uppercase tracking-[-0.64px] text-[32px] leading-[32px] sm:text-[36px] sm:leading-[36px] ...">{t("galleryTitle")}</h2><p className="text-white/80 text-center font-normal text-base ...">{t("gallerySubtitle")}</p></div>
           <div className="w-full marquee-container">
             <Marquee speed={50} pauseOnHover={false} gradient={false} direction="left" className="overflow-hidden marquee-content">
               {caseImages.map((image, index) => (
@@ -107,12 +107,12 @@ export default function HomePage() {
       {/* --- FAQ Section --- */}
       <section className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in bg-[#E781AF]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16 animate-slide-up"><h2 className="text-white text-center font-black uppercase tracking-[-0.64px] text-[32px] ...">{t("faqTitle")}</h2></div>
+          <div className="text-center mb-12 sm:mb-16 animate-slide-up"><h2 className="text-white text-center font-black uppercase tracking-[-0.64px] ...">{t("faqTitle")}</h2></div>
           <Accordion type="single" collapsible className="space-y-4 sm:space-y-6">
-            <AccordionItem value="item-1" className="border-none"><div className="card-hover animate-scale-in p-4 px-5 rounded-xl ..."><AccordionTrigger className="faq-question ...">{t("faq1Question")}</AccordionTrigger><AccordionContent className="...">{t("faq1Answer")}</AccordionContent></div></AccordionItem>
-            <AccordionItem value="item-2" className="border-none"><div className="card-hover animate-scale-in ..."><AccordionTrigger className="faq-question ...">{t("faq2Question")}</AccordionTrigger><AccordionContent className="...">{t("faq2Answer")}</AccordionContent></div></AccordionItem>
-            <AccordionItem value="item-3" className="border-none"><div className="card-hover animate-scale-in ..."><AccordionTrigger className="faq-question ...">{t("faq3Question")}</AccordionTrigger><AccordionContent className="...">{t("faq3Answer")}</AccordionContent></div></AccordionItem>
-            <AccordionItem value="item-4" className="border-none"><div className="card-hover animate-scale-in ..."><AccordionTrigger className="faq-question ...">{t("faq4Question")}</AccordionTrigger><AccordionContent className="...">{t("faq4Answer")}</AccordionContent></div></AccordionItem>
+            <AccordionItem value="item-1" className="border-none"><div className="card-hover animate-scale-in p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq1Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq1Answer")}</AccordionContent></div></AccordionItem>
+            <AccordionItem value="item-2" className="border-none"><div className="card-hover animate-scale-in animate-delay-100 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq2Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq2Answer")}</AccordionContent></div></AccordionItem>
+            <AccordionItem value="item-3" className="border-none"><div className="card-hover animate-scale-in animate-delay-200 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq3Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq3Answer")}</AccordionContent></div></AccordionItem>
+            <AccordionItem value="item-4" className="border-none"><div className="card-hover animate-scale-in animate-delay-300 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq4Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq4Answer")}</AccordionContent></div></AccordionItem>
           </Accordion>
         </div>
       </section>
@@ -123,10 +123,10 @@ export default function HomePage() {
       {/* --- Contacts Section --- */}
       <section className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in grid-pattern bg-[#0B388A] rounded-b-[80px]" id="contacts">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16 animate-slide-up"><h2 className="text-white text-center font-black uppercase ...">{t("contactTitle")}</h2></div>
+          <div className="text-center mb-12 sm:mb-16 animate-slide-up"><h2 className="text-white text-center font-black uppercase tracking-[-0.64px] ...">{t("contactTitle")}</h2></div>
           <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-4xl mx-auto">
-            <div className="card-hover flex-1 ..."><div className="..."><EmailIcon /></div><h3 className="...">{t("email")}</h3><a href="mailto:info@printcase.lv" className="...">info@printcase.lv</a></div>
-            <div className="card-hover flex-1 ..."><div className="..."><PhoneContactIcon /></div><h3 className="...">{t("phone")}</h3><a href="tel:+37129022999" className="...">+371 29022999</a></div>
+            <div className="card-hover flex-1 flex flex-col items-center text-center p-8 sm:p-12 animate-scale-in rounded-3xl ..."><div className="..."><EmailIcon /></div><h3 className="...">{t("email")}</h3><a href="mailto:info@printcase.lv" className="...">info@printcase.lv</a></div>
+            <div className="card-hover flex-1 flex flex-col items-center text-center p-8 sm:p-12 animate-scale-in ..."><div className="..."><PhoneContactIcon /></div><h3 className="...">{t("phone")}</h3><a href="tel:+37129022999" className="...">+371 29022999</a></div>
           </div>
         </div>
       </section>
