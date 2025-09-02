@@ -1,7 +1,7 @@
 // FILE: lib/translations.ts
 
 // The Language type includes all supported languages
-export type Language = "lv" | "ru" | "en" | "et" | "lt"
+export type Language = "lv" | "ru" | "en" | "et" | "lt";
 
 export const translations = {
   // --- LATVIAN (LV) ---
@@ -17,10 +17,10 @@ export const translations = {
     heroSubtitle: "Mēs pārvēršam tavas idejas realitātē dažu minūšu laikā.",
     findLocationButton: "PARĀDĪT KARTĒ",
 
-    // About section
+    // About section - Updated with "Creativity and Emotions" text
     aboutTitle: "Kas ir Printcase Express?",
-    aboutSubtitle: "Revolucionāra personalizētu telefona vāciņu ražošanas tehnoloģija",
-    aboutDescription: "Aizmirstiet par ilgu gaidīšanu. Mūsu modernie automāti ļauj izveidot unikālu vāciņu ar savu dizainu vai izvēlēties no gatavas galerijas. Tas ir ātri, kvalitatīvi un ērti.",
+    aboutSubtitle: "Vairāk nekā vāciņš — tavs stāsts.",
+    aboutDescription: "Pārvērt savus mīļākos mirkļus stilīgā aksesuārā. Augšupielādē tuvinieku, mājdzīvnieka foto vai savu īpašo dizainu un radi patiesi personisku lietu. Mūsu automāti nodrošinās augstas kvalitātes druku, lai tavas atmiņas vienmēr būtu līdzās, aizsargājot tavu telefonu.",
 
     // How it works
     howItWorksTitle: "KĀ TAS DARBOJAS?",
@@ -81,10 +81,10 @@ export const translations = {
     heroSubtitle: "Мы превращаем твои идеи в реальность за считанные минуты.",
     findLocationButton: "ПОКАЗАТЬ НА КАРТЕ",
 
-    // About section
+    // About section - Updated with "Creativity and Emotions" text
     aboutTitle: "Что такое Printcase Express?",
-    aboutSubtitle: "Революционная технология изготовления персонализированных чехлов",
-    aboutDescription: "Забудьте о долгом ожидании. Наши современные автоматы позволяют создать уникальный чехол с вашим дизайном или выбрать из готовой галереи. Это быстро, качественно и удобно.",
+    aboutSubtitle: "Больше, чем чехол — твоя история.",
+    aboutDescription: "Преврати любимые моменты в стильный аксессуар. Загрузи фото близких, домашнего питомца или свой собственный дизайн, и создай по-настоящему личную вещь. Наши автоматы обеспечат высокое качество печати, чтобы твои воспоминания всегда были рядом, защищая твой телефон.",
 
     // How it works
     howItWorksTitle: "КАК ЭТО РАБОТАЕТ?",
@@ -118,7 +118,7 @@ export const translations = {
     faq4Answer:"Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
 
     // Newsletter
-    newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ!",
+    newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ 10%!",
     newsletterSubtitleDiscount: "Подпишитесь и получите промокод на 10% для вашего первого заказа.",
     getDiscountButton: "Получить скидку",
     emailPlaceholder: "Ваш e-mail",
@@ -145,10 +145,10 @@ export const translations = {
     heroSubtitle: "We turn your ideas into reality in a matter of minutes.",
     findLocationButton: "VIEW ON MAP",
 
-    // About section
+    // About section - Updated with "Creativity and Emotions" text
     aboutTitle: "What is Printcase Express?",
-    aboutSubtitle: "Revolutionary technology for personalized phone cases",
-    aboutDescription: "Forget the long wait. Our modern machines allow you to create a unique case with your own design or choose from a ready-made gallery. It's fast, high-quality, and convenient.",
+    aboutSubtitle: "More than a case — your story.",
+    aboutDescription: "Turn your favorite moments into a stylish accessory. Upload a photo of loved ones, a pet, or your own design to create something truly personal. Our machines ensure high-quality printing, so your memories are always with you, protecting your phone.",
 
     // How it works
     howItWorksTitle: "HOW IT WORKS?",
@@ -173,7 +173,7 @@ export const translations = {
     // FAQ
     faqTitle: "FREQUENTLY ASKED QUESTIONS",
     faq1Question: "What phone models do you support?",
-    faq1Answer: "Our machines print cases for the most popular iPhone, Samsung Galaxy, and Xiaomi Redmi models. The list of available models is regularly updated.",
+    faq1Answer: "Our machines print cases for the most popular iPhone, Samsung Galaxy and Xiaomi Redmi models. The list of available models is regularly updated.",
     faq2Question: "Can I upload my own design or photo?",
     faq2Answer: "Yes, of course! You can upload any photo or image directly from your phone via QR code.",
     faq3Question: "How long does it take to print a case?",
@@ -209,11 +209,11 @@ export const translations = {
     heroSubtitle: "Teeme sinu ideed teoks vaid mõne minutiga.",
     findLocationButton: "VAATA KAARDIL",
 
-    // About section
+    // About section - Updated with "Creativity and Emotions" text
     aboutTitle: "Mis on Printcase Express?",
-    aboutSubtitle: "Revolutsiooniline tehnoloogia isikupärastatud telefoniümbriste valmistamiseks",
-    aboutDescription: "Unustage pikk ootamine. Meie kaasaegsed automaadid võimaldavad teil luua unikaalse ümbrise oma disainiga või valida valmisgaleriist. See on kiire, kvaliteetne ja mugav.",
-
+    aboutSubtitle: "Rohkem kui ümbris — sinu lugu.",
+    aboutDescription: "Muuda oma lemmikhetked stiilseks aksessuaariks. Laadi üles pilt oma lähedastest, lemmikloomast või oma disain ja loo midagi tõeliselt isiklikku. Meie automaadid tagavad kvaliteetse trüki, et sinu mälestused oleksid alati sinuga kaasas, kaitstes samal ajal sinu telefoni.",
+    
     // How it works
     howItWorksTitle: "KUIDAS SEE TÖÖTAB?",
     howItWorksSubtitle: "Lihtsalt 4 sammu sinu unistuste ümbriseni",
@@ -273,11 +273,11 @@ export const translations = {
     heroSubtitle: "Paversime jūsų idėjas realybe vos per kelias minutes.",
     findLocationButton: "RODYTI ŽEMĖLAPYJE",
 
-    // About section
+    // About section - Updated with "Creativity and Emotions" text
     aboutTitle: "Kas yra Printcase Express?",
-    aboutSubtitle: "Revoliucinė personalizuotų telefono dėklų gamybos technologija",
-    aboutDescription: "Pamirškite ilgą laukimą. Mūsų modernūs aparatai leidžia sukurti unikalų dėklą su savo dizainu arba pasirinkti iš paruoštos galerijos. Tai greita, kokybiška ir patogu.",
-
+    aboutSubtitle: "Daugiau nei dėklas — tavo istorija.",
+    aboutDescription: "Paverskite savo mėgstamiausias akimirkas stilingu aksesuaru. Įkelkite artimųjų, augintinio nuotrauką ar savo dizainą ir susikurkite tikrai asmenišką daiktą. Mūsų aparatai užtikrina aukštos kokybės spaudą, kad jūsų prisiminimai visada būtų šalia, saugantys jūsų telefoną.",
+    
     // How it works
     howItWorksTitle: "KAIP TAI VEIKIA?",
     howItWorksSubtitle: "Tik 4 paprasti žingsniai iki jūsų svajonių dėklo",
@@ -335,3 +335,4 @@ export const getTranslation = (language: Language, key: string): string => {
   }
   return value || key
 }
+
