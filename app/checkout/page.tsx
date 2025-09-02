@@ -36,7 +36,7 @@ export default function CheckoutPage() {
 
       // If we get a payment URL, redirect the user to it
       if (data.paymentUrl) {
-        router.push(data.paymentUrl);
+        window.location.href = data.paymentUrl;
       } else {
         console.error("Payment creation failed:", data);
         alert("Произошла ошибка при создании платежа. Попробуйте снова.");
@@ -98,3 +98,4 @@ export default function CheckoutPage() {
     </div>
   )
 }
+
