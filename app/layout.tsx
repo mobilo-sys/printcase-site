@@ -1,12 +1,9 @@
-// FILE: app/layout.tsx
-
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-// This is your existing language provider
 import { LanguageProvider } from "@/hooks/use-language"
-// 1. We import the CartProvider we created
+// 1. Import the CartProvider we created
 import { CartProvider } from "@/hooks/use-cart"
 
 const inter = Inter({
@@ -16,7 +13,6 @@ const inter = Inter({
   preload: true,
 })
 
-// Your existing metadata remains untouched
 export const metadata: Metadata = {
   title: "PrintCase Express - Персонализированные чехлы за 3 минуты",
   description:
@@ -39,7 +35,7 @@ export const metadata: Metadata = {
     description: "Создайте уникальный чехол для телефона с собственным дизайном за 3 минуты",
   },
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  generator: 'v0.app'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -60,8 +56,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
       <body className="font-sans">
-        {/* 2. Now we wrap the LanguageProvider with the CartProvider.
-            This ensures both systems are available to your entire site. */}
+        {/* 2. Wrap the LanguageProvider with the CartProvider */}
         <CartProvider>
           <LanguageProvider>{children}</LanguageProvider>
         </CartProvider>
@@ -69,3 +64,4 @@ export default function RootLayout({
     </html>
   )
 }
+
