@@ -118,7 +118,7 @@ export const translations = {
     faq4Answer:"Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
 
     // Newsletter
-    newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ 10%!",
+    newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ!",
     newsletterSubtitleDiscount: "Подпишитесь и получите промокод на 10% для вашего первого заказа.",
     getDiscountButton: "Получить скидку",
     emailPlaceholder: "Ваш e-mail",
