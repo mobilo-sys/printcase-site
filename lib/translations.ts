@@ -17,7 +17,7 @@ export const translations = {
     heroSubtitle: "Mēs pārvēršam tavas idejas realitātē dažu minūšu laikā.",
     findLocationButton: "PARĀDĪT KARTĒ",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Kas ir Printcase Express?",
     aboutSubtitle: "Vairāk nekā vāciņš — tavs stāsts.",
     aboutDescription: "Pārvērt savus mīļākos mirkļus stilīgā aksesuārā. Augšupielādē tuvinieku, mājdzīvnieka foto vai savu īpašo dizainu un radi patiesi personisku lietu. Mūsu automāti nodrošinās augstas kvalitātes druku, lai tavas atmiņas vienmēr būtu līdzās, aizsargājot tavu telefonu.",
@@ -54,9 +54,9 @@ export const translations = {
     faq4Answer: "Mēs izmantojam augstas kvalitātes un izturīgus materiālus, kas nodrošina drošu aizsardzību jūsu telefonam. Cenā ir iekļauts jauns vāciņš ar druku.",
 
     // Newsletter
-    newsletterTitleDiscount: "SAŅEMIET 10% ATLAIDI!",
-    newsletterSubtitleDiscount: "Abonējiet un saņemiet 10% atlaides kodu savam pirmajam pasūtījumam.",
-    getDiscountButton: "Saņemt atlaidi",
+    newsletterTitle: "SAŅEMIET ATLAIDI!",
+    newsletterSubtitle: "Abonējiet un saņemiet atlaides kodu savam pirmajam pasūtījumam.",
+    subscribeButton: "Saņemt atlaidi",
     emailPlaceholder: "Jūsu e-pasts",
     
     // Contact
@@ -81,7 +81,7 @@ export const translations = {
     heroSubtitle: "Мы превращаем твои идеи в реальность за считанные минуты.",
     findLocationButton: "ПОКАЗАТЬ НА КАРТЕ",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Что такое Printcase Express?",
     aboutSubtitle: "Больше, чем чехол — твоя история.",
     aboutDescription: "Преврати любимые моменты в стильный аксессуар. Загрузи фото близких, домашнего питомца или свой собственный дизайн, и создай по-настоящему личную вещь. Наши автоматы обеспечат высокое качество печати, чтобы твои воспоминания всегда были рядом, защищая твой телефон.",
@@ -118,9 +118,9 @@ export const translations = {
     faq4Answer:"Мы используем высококачественные и прочные материалы, которые обеспечивают надежную защиту для вашего телефона. В стоимость входит новый чехол с печатью.",
 
     // Newsletter
-    newsletterTitleDiscount: "ПОЛУЧИТЕ СКИДКУ 10%!",
-    newsletterSubtitleDiscount: "Подпишитесь и получите промокод на 10% для вашего первого заказа.",
-    getDiscountButton: "Получить скидку",
+    newsletterTitle: "ПОЛУЧИТЕ СКИДКУ!",
+    newsletterSubtitle: "Подпишитесь и получите промокод для вашего первого заказа.",
+    subscribeButton: "Получить скидку",
     emailPlaceholder: "Ваш e-mail",
 
     // Contact
@@ -145,7 +145,7 @@ export const translations = {
     heroSubtitle: "We turn your ideas into reality in a matter of minutes.",
     findLocationButton: "VIEW ON MAP",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "What is Printcase Express?",
     aboutSubtitle: "More than a case — your story.",
     aboutDescription: "Turn your favorite moments into a stylish accessory. Upload a photo of loved ones, a pet, or your own design to create something truly personal. Our machines ensure high-quality printing, so your memories are always with you, protecting your phone.",
@@ -182,9 +182,9 @@ export const translations = {
     faq4Answer: "We use high-quality, durable materials that provide reliable protection for your phone. The price includes a new case with your print.",
 
     // Newsletter
-    newsletterTitleDiscount: "GET 10% OFF!",
-    newsletterSubtitleDiscount: "Subscribe and receive a 10% discount code for your first order.",
-    getDiscountButton: "Get Discount",
+    newsletterTitle: "GET A DISCOUNT!",
+    newsletterSubtitle: "Subscribe and receive a discount code for your first order.",
+    subscribeButton: "Get Discount",
     emailPlaceholder: "Your e-mail",
 
     // Contact
@@ -209,7 +209,7 @@ export const translations = {
     heroSubtitle: "Teeme sinu ideed teoks vaid mõne minutiga.",
     findLocationButton: "VAATA KAARDIL",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Mis on Printcase Express?",
     aboutSubtitle: "Rohkem kui ümbris — sinu lugu.",
     aboutDescription: "Muuda oma lemmikhetked stiilseks aksessuaariks. Laadi üles pilt oma lähedastest, lemmikloomast või oma disain ja loo midagi tõeliselt isiklikku. Meie automaadid tagavad kvaliteetse trüki, et sinu mälestused oleksid alati sinuga kaasas, kaitstes samal ajal sinu telefoni.",
@@ -246,9 +246,9 @@ export const translations = {
     faq4Answer: "Kasutame kvaliteetseid ja vastupidavaid materjale, mis pakuvad teie telefonile usaldusväärset kaitset. Hind sisaldab uut prinditud ümbrist.",
 
     // Newsletter
-    newsletterTitleDiscount: "SAA 10% ALLAHINDLUST!",
-    newsletterSubtitleDiscount: "Telli uudiskiri ja saa 10% sooduskood oma esimesele tellimusele.",
-    getDiscountButton: "Saa allahindlust",
+    newsletterTitle: "SAA ALLAHINDLUST!",
+    newsletterSubtitle: "Telli uudiskiri ja saa sooduskood oma esimesele tellimusele.",
+    subscribeButton: "Saa allahindlust",
     emailPlaceholder: "Sinu e-post",
 
     // Contact
@@ -273,7 +273,7 @@ export const translations = {
     heroSubtitle: "Paversime jūsų idėjas realybe vos per kelias minutes.",
     findLocationButton: "RODYTI ŽEMĖLAPYJE",
 
-    // About section - Updated with "Creativity and Emotions" text
+    // About section
     aboutTitle: "Kas yra Printcase Express?",
     aboutSubtitle: "Daugiau nei dėklas — tavo istorija.",
     aboutDescription: "Paverskite savo mėgstamiausias akimirkas stilingu aksesuaru. Įkelkite artimųjų, augintinio nuotrauką ar savo dizainą ir susikurkite tikrai asmenišką daiktą. Mūsų aparatai užtikrina aukštos kokybės spaudą, kad jūsų prisiminimai visada būtų šalia, saugantys jūsų telefoną.",
@@ -310,9 +310,9 @@ export const translations = {
     faq4Answer: "Naudojame aukštos kokybės ir patvarias medžiagas, kurios užtikrina patikimą jūsų telefono apsaugą. Į kainą įskaičiuotas naujas dėklas su spauda.",
 
     // Newsletter
-    newsletterTitleDiscount: "GAUKITE 10% NUOLAIDĄ!",
-    newsletterSubtitleDiscount: "Prenumeruokite naujienas ir gaukite 10% nuolaidos kodą savo pirmajam užsakymui.",
-    getDiscountButton: "Gauti nuolaidą",
+    newsletterTitle: "GAUKITE NUOLAIDĄ!",
+    newsletterSubtitle: "Prenumeruokite naujienas ir gaukite nuolaidos kodą savo pirmajam užsakymui.",
+    subscribeButton: "Gauti nuolaidą",
     emailPlaceholder: "Jūsų el. paštas",
 
     // Contact
@@ -335,4 +335,3 @@ export const getTranslation = (language: Language, key: string): string => {
   }
   return value || key
 }
-
