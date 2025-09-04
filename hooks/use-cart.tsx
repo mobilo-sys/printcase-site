@@ -10,7 +10,17 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-// This defines the functions and data that our cart will provide to the app.
+// 1. Define a type for customer information.
+export interface CustomerInfo {
+  name: string;
+  phone: string;
+  email: string;
+}
+
+// 2. Define a type for the available shipping methods.
+export type ShippingMethod = 'pickup' | 'pacomat';
+
+// This defines all the functions and data that our cart will provide to the app.
 interface CartContextType {
   items: CartItem[];
   addItem: (product: Product) => void;
@@ -18,6 +28,10 @@ interface CartContextType {
   clearCart: () => void;
   total: number;
   itemCount: number;
+  customerInfo: CustomerInfo;
+  updateCustomerInfo: (info: Partial<CustomerInfo>) => void;
+  shippingMethod: ShippingMethod;
+  setShippingMethod: (method: ShippingMethod) => void;
 }
 
 // We create a context to hold the cart's state.
@@ -26,6 +40,9 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 // This is the provider component that will wrap our entire application.
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  // 3. Add state for customer info and shipping method.
+  const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({ name: '', phone: '', email: '' });
+  const [shippingMethod, setShippingMethod] = useState<ShippingMethod>('pickup');
 
   // This effect runs once when the app loads to get the cart from the browser's local storage.
   useEffect(() => {
@@ -63,6 +80,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems([]);
   };
 
+  // 4. Function to update customer information.
+  const updateCustomerInfo = (info: Partial<CustomerInfo>) => {
+    setCustomerInfo(prevInfo => ({ ...prevInfo, ...info }));
+  };
+
   // Calculate the total price of all items in the cart.
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -70,7 +92,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, clearCart, total, itemCount }}>
+    <CartContext.Provider value={{ 
+        items, 
+        addItem, 
+        removeItem, 
+        clearCart, 
+        total, 
+        itemCount,
+        customerInfo,
+        updateCustomerInfo,
+        shippingMethod,
+        setShippingMethod
+    }}>
       {children}
     </CartContext.Provider>
   );
