@@ -40,17 +40,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('printcase-cart', JSON.stringify(items));
   }, [items]);
 
-  // Function to add a product to the cart.
+  // Function to add a product to the cart. If it exists, increase quantity.
   const addItem = (product: Product) => {
     setItems(prevItems => {
       const existingItem = prevItems.find(item => item.id === product.id);
       if (existingItem) {
-        // If the item already exists, increase its quantity.
         return prevItems.map(item =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         );
       }
-      // Otherwise, add the new product to the cart with a quantity of 1.
       return [...prevItems, { ...product, quantity: 1 }];
     });
   };

@@ -8,54 +8,53 @@ export interface Product {
   imageSrc: string; // Path to the product image in the 'public' folder
 }
 
-// This is our simple product database.
-// You can change names and add real image paths later.
+// This is our simple product database with updated Latvian names.
 export const products: Product[] = [
   {
     id: 'transparent-case-1',
-    name: 'Прозрачный чехол (S)',
+    name: 'Caurspīdīgs vāciņš', // Updated from "Прозрачный чехол (S)"
     price: 14.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'transparent-case-2',
-    name: 'Прозрачный чехол (M)',
+    name: 'Caurspīdīgs vāciņš', // Updated from "Прозрачный чехол (M)"
     price: 16.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'transparent-case-3',
-    name: 'Прозрачный чехол (L)',
+    name: 'Caurspīdīgs vāciņš', // Updated from "Прозрачный чехол (L)"
     price: 17.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'transparent-case-4',
-    name: 'Прозрачный чехол (XL)',
+    name: 'Caurspīdīgs vāciņš', // Updated from "Прозрачный чехол (XL)"
     price: 18.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'transparent-case-5',
-    name: 'Прозрачный чехол (Pro)',
+    name: 'Caurspīdīgs vāciņš', // Updated from "Прозрачный чехол (Pro)"
     price: 19.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'magnetic-case-1',
-    name: 'Магнитный чехол (Pro)',
+    name: 'MagSafe vāciņš', // Updated from "Магнитный чехол (Pro)"
     price: 19.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'magnetic-case-2',
-    name: 'Магнитный чехол (Pro Max)',
+    name: 'MagSafe vāciņš', // Updated from "Магнитный чехол (Pro Max)"
     price: 22.90,
     imageSrc: '/placeholder.svg',
   },
   {
     id: 'magnetic-case-3',
-    name: 'Магнитный чехол (Ultra)',
+    name: 'MagSafe vāciņš', // Updated from "Магнитный чехол (Ultra)"
     price: 24.90,
     imageSrc: '/placeholder.svg',
   },
