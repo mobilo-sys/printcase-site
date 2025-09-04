@@ -1,34 +1,63 @@
 // FILE: lib/products.ts
-// This file acts as our simple product database.
 
-// This defines the structure for a single product
+// This defines what a 'Product' is in our application
 export interface Product {
   id: string;
   name: string;
   price: number; // Price in EUR
-  imageSrc: string;
+  imageSrc: string; // Path to the product image in the 'public' folder
 }
 
-// This is our list of available products.
-// You can add as many products as you want here.
-// IMPORTANT: Replace image paths with real image paths from your 'public' folder.
+// This is our simple product database.
+// You can change names and add real image paths later.
 export const products: Product[] = [
   {
-    id: 'case-001',
-    name: 'Персонализированный чехол',
-    price: 14.99,
-    imageSrc: '/gallery/Phone_Case_4.png', // Example path
+    id: 'transparent-case-1',
+    name: 'Прозрачный чехол (S)',
+    price: 14.90,
+    imageSrc: '/placeholder.svg',
   },
   {
-    id: 'case-002',
-    name: 'Чехол из галереи "Цветы"',
-    price: 12.99,
-    imageSrc: '/gallery/Phone_Case_1.png', // Example path
+    id: 'transparent-case-2',
+    name: 'Прозрачный чехол (M)',
+    price: 16.90,
+    imageSrc: '/placeholder.svg',
   },
   {
-    id: 'case-003',
-    name: 'Прозрачный чехол',
-    price: 9.99,
-    imageSrc: '/gallery/clear-case.png', // Example path
+    id: 'transparent-case-3',
+    name: 'Прозрачный чехол (L)',
+    price: 17.90,
+    imageSrc: '/placeholder.svg',
+  },
+  {
+    id: 'transparent-case-4',
+    name: 'Прозрачный чехол (XL)',
+    price: 18.90,
+    imageSrc: '/placeholder.svg',
+  },
+  {
+    id: 'transparent-case-5',
+    name: 'Прозрачный чехол (Pro)',
+    price: 19.90,
+    imageSrc: '/placeholder.svg',
+  },
+  {
+    id: 'magnetic-case-1',
+    name: 'Магнитный чехол (Pro)',
+    price: 19.90,
+    imageSrc: '/placeholder.svg',
+  },
+  {
+    id: 'magnetic-case-2',
+    name: 'Магнитный чехол (Pro Max)',
+    price: 22.90,
+    imageSrc: '/placeholder.svg',
+  },
+  {
+    id: 'magnetic-case-3',
+    name: 'Магнитный чехол (Ultra)',
+    price: 24.90,
+    imageSrc: '/placeholder.svg',
   },
 ];
+
