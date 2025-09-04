@@ -56,7 +56,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </head>
       <body className="font-sans">
-        {/* 2. Wrap the LanguageProvider with the CartProvider */}
+        {/* 2. Wrap the LanguageProvider with CartProvider */}
+        {/* This makes both cart and language available everywhere */}
         <CartProvider>
           <LanguageProvider>{children}</LanguageProvider>
         </CartProvider>
