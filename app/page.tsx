@@ -105,14 +105,34 @@ export default function HomePage() {
       </section>
 
       {/* --- FAQ Section --- */}
-      <section className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in bg-[#E781AF]">
+      {/* The background color is changed from bg-[#E781AF] to bg-[#F5F5F7] */}
+      <section className="relative py-12 sm:py-16 md:py-24 w-full animate-fade-in bg-[#F5F5F7]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16 animate-slide-up"><h2 className="text-white text-center font-black uppercase tracking-[-0.64px] text-[32px] leading-[32px] sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px] md:text-[40px] md:leading-[40px] md:tracking-[-0.8px] lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px] xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px] mb-4 sm:mb-6 font-sans">{t("faqTitle")}</h2></div>
+          {/* The title text color is changed from text-white to text-[#0B388A] */}
+          <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+            <h2 className="text-[#0B388A] text-center font-black uppercase tracking-[-0.64px] text-[32px] leading-[32px] sm:text-[36px] sm:leading-[36px] sm:tracking-[-0.72px] md:text-[40px] md:leading-[40px] md:tracking-[-0.8px] lg:text-[44px] lg:leading-[44px] lg:tracking-[-0.88px] xl:text-[48px] xl:leading-[48px] xl:tracking-[-0.96px] mb-4 sm:mb-6 font-sans">{t("faqTitle")}</h2>
+          </div>
+          {/* The Accordion text colors are changed for readability on a light background */}
           <Accordion type="single" collapsible className="space-y-4 sm:space-y-6">
-            <AccordionItem value="item-1" className="border-none"><div className="card-hover animate-scale-in p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq1Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq1Answer")}</AccordionContent></div></AccordionItem>
-            <AccordionItem value="item-2" className="border-none"><div className="card-hover animate-scale-in animate-delay-100 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq2Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq2Answer")}</AccordionContent></div></AccordionItem>
-            <AccordionItem value="item-3" className="border-none"><div className="card-hover animate-scale-in animate-delay-200 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq3Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq3Answer")}</AccordionContent></div></AccordionItem>
-            <AccordionItem value="item-4" className="border-none"><div className="card-hover animate-scale-in animate-delay-300 p-4 px-5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg [&>svg]:text-white">{t("faq4Question")}</AccordionTrigger><AccordionContent className="text-white/90 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq4Answer")}</AccordionContent></div></AccordionItem>
+            <AccordionItem value="item-1" className="border-none">
+              <div className="card-hover animate-scale-in p-4 px-5 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm">
+                <AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg text-gray-900 font-semibold [&>svg]:text-[#0B388A]">{t("faq1Question")}</AccordionTrigger>
+                <AccordionContent className="text-gray-700 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq1Answer")}</AccordionContent>
+              </div>
+            </AccordionItem>
+            <AccordionItem value="item-2" className="border-none">
+              <div className="card-hover animate-scale-in animate-delay-100 p-4 px-5 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm">
+                <AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg text-gray-900 font-semibold [&>svg]:text-[#0B388A]">{t("faq2Question")}</AccordionTrigger>
+                <AccordionContent className="text-gray-700 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq2Answer")}</AccordionContent>
+              </div>
+            </AccordionItem>
+            <AccordionItem value="item-3" className="border-none">
+              <div className="card-hover animate-scale-in animate-delay-200 p-4 px-5 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm">
+                <AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg text-gray-900 font-semibold [&>svg]:text-[#0B388A]">{t("faq3Question")}</AccordionTrigger>
+                <AccordionContent className="text-gray-700 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq3Answer")}</AccordionContent>
+              </div>
+            </AccordionItem>
+            <AccordionItem value="item-4" className="border-none"><div className="card-hover animate-scale-in animate-delay-300 p-4 px-5 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm"><AccordionTrigger className="faq-question hover:no-underline text-left text-base sm:text-lg text-gray-900 font-semibold [&>svg]:text-[#0B388A]">{t("faq4Question")}</AccordionTrigger><AccordionContent className="text-gray-700 text-sm sm:text-base leading-relaxed pt-3 sm:pt-4">{t("faq4Answer")}</AccordionContent></div></AccordionItem>
           </Accordion>
         </div>
       </section>
