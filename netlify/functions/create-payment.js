@@ -6,9 +6,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    // 1. ПОЛУЧАЕМ ВСЕ ДАННЫЕ ИЗ ЗАПРОСА
-    // Было: const { amount, orderId } = JSON.parse(event.body);
-    const { amount, orderId, customer, shipping } = JSON.parse(event.body); // Стало
+    const { amount, orderId, customer } = JSON.parse(event.body);
 
     const apiKey = process.env.MAKSEKESKUS_API_KEY;
     const secretKey = process.env.MAKSEKESKUS_SECRET_KEY;
@@ -27,21 +25,22 @@ exports.handler = async (event) => {
         currency: "EUR",
         reference: orderId,
       },
-      // 2. ДОБАВЛЯЕМ ИНФОРМАЦИЮ О КЛИЕНТЕ
       customer: {
         email: customer.email,
         phone: customer.phone,
-        firstname: customer.name.split(' ')[0], // Берем первое слово как имя
-        lastname: customer.name.split(' ').slice(1).join(' '), // Все остальное как фамилия
+        firstname: customer.name.split(' ')[0],
+        lastname: customer.name.split(' ').slice(1).join(' '),
         country: "LV",
-        // Указываем IP адрес для дополнительной безопасности (рекомендуется)
-        ip: event.headers['x-nf-client-connection-ip'], 
+        ip: event.headers['x-nf-client-connection-ip'],
       },
     };
 
     const authHeader = `Basic ${Buffer.from(`${apiKey}:${secretKey}`).toString('base64')}`;
 
-    const response = await fetch("https://api.makecommerce.net/v1/payments", {
+    // ИСПРАВЛЕННАЯ СТРОКА:
+    // Было: "https://api.makecommerce.net/v1/payments"
+    // Стало: "https://api.maksekeskus.ee/v1/payments"
+    const response = await fetch("https://api.maksekeskus.ee/v1/payments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
