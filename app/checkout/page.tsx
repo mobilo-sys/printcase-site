@@ -62,7 +62,7 @@ export default function CheckoutPage() {
       const data = await response.json();
 
       if (data.paymentUrl) {
-        clearCart(); // Clear the cart before redirecting
+        // We don't clear the cart here, in case payment fails and user returns.
         window.location.href = data.paymentUrl;
       } else {
         console.error("Payment creation failed:", data);
@@ -112,19 +112,19 @@ export default function CheckoutPage() {
                 <h2 className="text-2xl font-bold mb-4 border-b pb-3">Pasūtījuma Kopsavilkums</h2>
                 
                 {/* Customer Information Section */}
-                <div className="space-y-4 mb-6">
+                <div className="space-y-4 my-6">
                     <h3 className="font-bold text-lg">Pircēja informācija</h3>
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Vārds, Uzvārds</label>
-                        <input type="text" name="name" id="name" value={customerInfo.name} onChange={(e) => updateCustomerInfo({ name: e.target.value })} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Vārds, Uzvārds</label>
+                        <input type="text" name="name" id="name" value={customerInfo.name} onChange={(e) => updateCustomerInfo({ name: e.target.value })} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required />
                     </div>
                     <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Telefona numurs</label>
-                        <input type="tel" name="phone" id="phone" value={customerInfo.phone} onChange={(e) => updateCustomerInfo({ phone: e.target.value })} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Telefona numurs</label>
+                        <input type="tel" name="phone" id="phone" value={customerInfo.phone} onChange={(e) => updateCustomerInfo({ phone: e.target.value })} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required />
                     </div>
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-pasts</label>
-                        <input type="email" name="email" id="email" value={customerInfo.email} onChange={(e) => updateCustomerInfo({ email: e.target.value })} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">E-pasts</label>
+                        <input type="email" name="email" id="email" value={customerInfo.email} onChange={(e) => updateCustomerInfo({ email: e.target.value })} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required />
                     </div>
                 </div>
                 
@@ -142,7 +142,7 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* Cart Items Section */}
-                <div className="flex-grow space-y-4 min-h-[100px]">
+                <div className="flex-grow space-y-4 min-h-[100px] border-t pt-4">
                 {items.length === 0 ? (
                     <div className="flex items-center justify-center h-full">
                         <p className="text-gray-500 italic text-center">Grozs ir tukšs.</p>
